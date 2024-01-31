@@ -1,0 +1,127 @@
+@use './global' as *;
+
+$tablet-width: 768px;
+
+@mixin tablet-and-desktop {
+    @media (min-width: $tablet-width) {
+        @content;
+    }
+}
+
+.header-padding {
+    padding-top: 24px;
+    padding-bottom: 16px;
+}
+
+.component-padding {
+    padding-bottom: 16px;
+}
+
+.page-header {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    @extend .header-padding;
+}
+
+.section-header {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    @extend .header-padding;
+}
+
+.subheader {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 500;
+    @extend .header-padding;
+}
+
+.body-copy, .footer-copy {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    @extend .component-padding;
+
+    &--bold {
+        @extend .body-copy;
+        @extend .footer-copy;
+        font-weight: 700;
+    }
+}
+
+.labels-and-buttons {
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+
+.wordmark {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: $primary-light;
+}
+
+@include tablet-and-desktop {
+
+    .header-padding {
+        padding-top: 48px;
+        padding-bottom: 36px;
+    }
+
+    .component-padding {
+        padding-bottom: 36px;
+    }
+
+    .page-header {
+        font-size: 3.75rem;
+        line-height: 4.25rem;
+        font-weight: 700;
+        @extend .header-padding;
+    }
+
+    .section-header {
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+        font-weight: 700;
+        @extend .header-padding;
+    }
+
+    .subheader {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 600;
+        @extend .header-padding;
+    }
+
+    .body-copy {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        font-weight: 400;
+        @extend .component-padding;
+
+        &--bold {
+            @extend .body-copy;
+            font-weight: 700;
+        }
+    }
+
+    .footer-copy {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 400;
+        @extend .component-padding;
+
+        &--bold {
+            @extend .footer-copy;
+            font-weight: 700;
+        }
+    }
+
+    .labels-and-buttons {
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+    }
+}

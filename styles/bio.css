@@ -1,9 +1,210 @@
+.check {
+  border: red 1px dashed;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url(/assets/fonts/AvenirNextLTPro-Regular.otf) format(".otf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url(/assets/fonts/AvenirNextLTPro-Demi.otf) format(".otf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url(/assets/fonts/AvenirNextLTPro-Bold.otf) format(".otf");
+  font-weight: 700;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
-  background-color: black;
-  color: white;
+  font-family: "Avenir";
+}
+
+.side-padding, .bio, .photo-gallery, .footer-bar {
+  padding: 0 1rem;
+}
+
+.vertical-margin, .bio__image, .photo-gallery__image {
+  margin-bottom: 1rem;
+}
+
+.header-padding, .footer-wordmark, .subheader, .bio__subheader, .section-header, .photo-gallery__header, .footer-bar__header, .page-header, .hero__header, .bio__header {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+
+.component-padding, .footer-social, .body-copy, .bio__copy, .nav-bar-list__link, .body-copy--bold, .bio__caption, .footer-copy--bold, .footer-contact-info__header, .footer-copy, .footer-contact-info__copy {
+  padding-bottom: 16px;
+}
+
+.page-header, .hero__header, .bio__header {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.section-header, .photo-gallery__header, .footer-bar__header {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.subheader, .bio__subheader {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+}
+
+.body-copy, .bio__copy, .nav-bar-list__link, .body-copy--bold, .bio__caption, .footer-copy--bold, .footer-contact-info__header, .footer-copy, .footer-contact-info__copy {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+.body-copy--bold, .bio__caption, .footer-copy--bold, .footer-contact-info__header {
+  font-weight: 700;
+}
+
+.labels-and-buttons {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+.wordmark, .footer-wordmark, .nav-bar__wordmark {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+  .header-padding, .footer-wordmark, .page-header, .hero__header, .bio__header, .section-header, .photo-gallery__header, .footer-bar__header, .subheader, .bio__subheader {
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+  .component-padding, .footer-social, .body-copy, .bio__copy, .nav-bar-list__link, .footer-copy, .footer-contact-info__copy, .body-copy--bold, .bio__caption, .footer-copy--bold, .footer-contact-info__header {
+    padding-bottom: 36px;
+  }
+  .page-header, .hero__header, .bio__header {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-weight: 700;
+  }
+  .section-header, .photo-gallery__header, .footer-bar__header {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+  }
+  .subheader, .bio__subheader {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+  }
+  .body-copy, .bio__copy, .nav-bar-list__link, .body-copy--bold, .bio__caption, .footer-copy--bold, .footer-contact-info__header {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+  }
+  .body-copy--bold, .bio__caption {
+    font-weight: 700;
+  }
+  .footer-copy, .footer-contact-info__copy, .body-copy--bold, .bio__caption, .footer-copy--bold, .footer-contact-info__header {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+  }
+  .footer-copy--bold, .footer-contact-info__header {
+    font-weight: 700;
+  }
+  .labels-and-buttons {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+  }
+}
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #323232;
+}
+.nav-bar__wordmark {
+  margin-top: 16px;
+}
+.nav-bar-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.nav-bar-list__item {
+  width: 100%;
+  text-align: center;
+}
+.nav-bar-list__item--active {
+  border-bottom: 3px #FFFFFF solid;
+}
+.nav-bar-list__link {
+  color: #FFFFFF;
+}
+
+.footer-bar {
+  background-color: #323232;
+}
+
+.hero__header, .footer-bar__header, .footer-contact-info__header, .footer-contact-info__copy {
+  color: #FFFFFF;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.hero__image {
+  width: 100%;
+}
+.hero__image--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+}
+.hero__header {
+  position: absolute;
+  left: 1rem;
+}
+
+.bio {
+  background-color: #FFFFFF;
+}
+.bio__image {
+  width: 100%;
+}
+.bio__header, .bio__caption, .bio__subheader, .bio__copy {
+  color: #323232;
+}
+
+.photo-gallery {
+  display: flex;
+  flex-direction: column;
+  background-color: #FAFAFA;
+}
+.photo-gallery__image {
+  width: 100%;
+}
+
+.footer-social {
+  display: flex;
+  width: 35%;
+  justify-content: space-between;
 }/*# sourceMappingURL=bio.css.map */
