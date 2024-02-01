@@ -3,117 +3,215 @@
 @use "./partials/nav-bar-styles" as *;
 
 .footer-bar {
-   background-color: $primary-dark;
+	background-color: $primary-dark;
 }
 
-.hero__header, .footer-bar__header, .footer-contact-info__header, .footer-contact-info__copy {
-    color: $primary-light;
+.hero__header,
+.bio__header,
+.footer-bar__header,
+.footer-contact-info__header,
+.footer-contact-info__copy {
+	color: $primary-light;
 }
 
-.hero__header, .bio__header {
-    @extend .page-header;
+.bio__header,
+.photo-gallery__header {
+	@extend .section-header;
 }
 
 .hero {
-    position: relative;
-    display: flex;
-    align-items: center;
+	position: relative;
+	display: flex;
+	align-items: center;
 
-    &__image {
-        width: 100%;
-    
-        &--overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(50, 50, 50, .5);
-        }
-    }
+	&__image {
+		width: 100%;
 
-    &__header {
-        position: absolute;
-        left: 1rem;
-    }
+		&--overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(50, 50, 50, 0.5);
+		}
+	}
+
+	&__header {
+		@extend .page-header, .side-padding;
+		position: absolute;
+		left: 0;
+	}
 }
 
 .bio {
-    @extend .side-padding;
-    background-color: $primary-light;
+	@extend .side-padding;
+	background-color: $primary-light;
 
-    &__image {
-        @extend .vertical-margin;
-        width: 100%;
-    }
+	&__container {
+		@include tablet {
+			padding: 0 56px;
+		}
 
-    &__caption {
-        @extend .body-copy--bold;
-    }
+		@include desktop {
+			padding: 0 80px;
+		}
+	}
 
-    &__subheader {
-        @extend .subheader;
-    }
+	&__image {
+		width: 100%;
+	}
 
-    &__copy {
-        @extend .body-copy;
-    }
+	&__caption {
+		@extend .subheader;
+		font-size: 1.39rem;
+		padding: 16px 0;
+
+		@include desktop {
+			font-size: 1.5rem;
+			width: 77%;
+		}
+
+		&--credit {
+			font-size: 1rem;
+			font-weight: 500;
+			padding: 0;
+		}
+	}
+
+	&__subheader {
+		@extend .subheader;
+	}
+
+	&__copy-container {
+		@include tablet {
+			display: flex;
+		}
+	}
+
+	&__copy {
+		@extend .body-copy;
+
+		@include tablet {
+			padding-right: 24px;
+		}
+
+		@include desktop {
+			padding-right: 80px;
+		}
+	}
 }
 
-.bio__header, .bio__caption, .bio__subheader, .bio__copy {
-    color: $primary-dark;
+.bio__header,
+.bio__caption,
+.bio__subheader,
+.bio__copy {
+	color: $primary-dark;
 }
 
 .photo-gallery {
-    @extend .side-padding;
-    display: flex;
-    flex-direction: column;
-    background-color: $secondary-light;
+	@extend .side-padding;
+	background-color: $secondary-light;
 
-    &__header {
-        @extend .section-header;
-    }
+	&__container {
+		display: flex;
+		flex-direction: column;
 
-    &__image {
-        @extend .vertical-margin;
-        width: 100%;
-    }
+		@include tablet {
+			flex-flow: row wrap;
+			justify-content: space-between;
+			padding-bottom: 20px;
+		}
+	}
+
+	&__image {
+		@extend .vertical-margin;
+
+		@include tablet {
+			width: 30%;
+			margin-bottom: 24px;
+		}
+
+		@include desktop {
+			width: 32%;
+			margin-bottom: 24px;
+		}
+	}
 }
 
 .footer {
-    &-bar {
-        @extend .side-padding;
-    
-        &__header {
-            @extend .section-header;
-        }
-    }
+	&-bar {
+		@extend .side-padding;
+		position: relative;
 
-    &-social {
-        display: flex;
-        width: 35%;
-        justify-content: space-between;
-        @extend .component-padding;
-    }
+		&__header {
+			@extend .section-header;
+			padding-right: 24px;
 
-    &-contact-info {
-        &__header {
-            @extend .footer-copy--bold;
-        }
-    
-        &__copy {
-            @extend .footer-copy;
-        } 
-    }
+			@include tablet {
+				padding-bottom: 0;
+			}
+		}
+	}
 
-    &-wordmark {
-        @extend .wordmark;
-        @extend .header-padding;
-    }
+	&-header-container {
+		@include tablet {
+			display: flex;
+			align-items: flex-end;
+			margin-bottom: 2rem;
+		}
+	}
+
+	&-social {
+		display: flex;
+		justify-content: flex-start;
+		width: 30%;
+		@extend .component-padding;
+
+		@include tablet {
+			padding: 0 0 0 16px;
+		}
+
+		@include desktop {
+			padding: 0 0 0 64px;
+		}
+
+		&__link {
+			margin-right: 32px;
+		}
+	}
+
+	&-contact-info {
+		@include tablet {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		@include desktop {
+			width: 75%;
+		}
+
+		&__header {
+			@extend .footer-copy--bold;
+		}
+
+		&__copy {
+			@extend .footer-copy;
+		}
+	}
+
+	&-wordmark {
+		@extend .wordmark;
+		@extend .header-padding;
+
+		@include tablet {
+			position: absolute;
+			top: 16px;
+			right: 36px;
+		}
+
+		@include desktop {
+			right: 80px;
+		}
+	}
 }
-
-
-
-
-
-

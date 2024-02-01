@@ -1,51 +1,87 @@
 .check {
-    border: red 1px dashed;
+	border: red 3px dashed;
 }
 
 // colors
 $primary-dark: #323232;
-$primary-mid: #AFAFAF;
-$primary-light: #FFFFFF;
+$primary-mid: #afafaf;
+$primary-light: #ffffff;
 $secondary-dark: #000000;
-$secondary-mid: #E1E1E1;
-$secondary-light: #FAFAFA;
+$secondary-mid: #e1e1e1;
+$secondary-light: #fafafa;
+
+// screen sizes
+$tablet-width: 768px;
+$desktop-width: 1280px;
+
+@mixin tablet {
+	@media (min-width: $tablet-width) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: $desktop-width) {
+		@content;
+	}
+}
 
 // font
 @font-face {
-    font-family: 'Avenir';
-    src: url(/assets/fonts/AvenirNextLTPro-Regular.otf) format(".otf"); 
-    font-weight: 400;
-    font-style: normal;
+	font-family: "Avenir";
+	src: url(/assets/fonts/AvenirNextLTPro-Regular.otf) format(".otf");
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Avenir';
-    src: url(/assets/fonts/AvenirNextLTPro-Demi.otf) format(".otf");
-    font-weight: 600;
-    font-style: normal;
+	font-family: "Avenir";
+	src: url(/assets/fonts/AvenirNextLTPro-Demi.otf) format(".otf");
+	font-weight: 600;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Avenir';
-    src: url(/assets/fonts/AvenirNextLTPro-Bold.otf) format(".otf");
-    font-weight: 700;
-    font-style: normal;
+	font-family: "Avenir";
+	src: url(/assets/fonts/AvenirNextLTPro-Bold.otf) format(".otf");
+	font-weight: 700;
+	font-style: normal;
 }
 
 // resets & universal styling
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-    font-family: 'Avenir';
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+	font-family: "Avenir";
 }
 
 .side-padding {
-    padding: 0 1rem;
+	padding: 0 1rem;
 }
 
 .vertical-margin {
-    margin-bottom: 1rem;
+	margin-bottom: 1rem;
+}
+
+@include tablet {
+	.side-padding {
+		padding: 0 2.25rem;
+	}
+
+	.vertical-margin {
+		margin-bottom: 2.25rem;
+	}
+}
+
+@include desktop {
+	.side-padding {
+		padding: 0 5rem;
+	}
+
+	.vertical-margin {
+		margin-bottom: 2.25rem;
+	}
 }
