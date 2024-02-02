@@ -1,29 +1,8 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
 .check {
 	border: red 3px dashed;
-}
-
-// colors
-$primary-dark: #323232;
-$primary-mid: #afafaf;
-$primary-light: #ffffff;
-$secondary-dark: #000000;
-$secondary-mid: #e1e1e1;
-$secondary-light: #fafafa;
-
-// screen sizes
-$tablet-width: 768px;
-$desktop-width: 1280px;
-
-@mixin tablet {
-	@media (min-width: $tablet-width) {
-		@content;
-	}
-}
-
-@mixin desktop {
-	@media (min-width: $desktop-width) {
-		@content;
-	}
 }
 
 // font

@@ -1,10 +1,8 @@
 @use "./partials/global" as *;
 @use "./partials/text-styles" as *;
 @use "./partials/nav-bar-styles" as *;
-
-.footer-bar {
-	background-color: $primary-dark;
-}
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
 
 .hero__header,
 .bio__header,
@@ -143,6 +141,7 @@
 	&-bar {
 		@extend .side-padding;
 		position: relative;
+		background-color: $primary-dark;
 
 		&__header {
 			@extend .section-header;
@@ -173,7 +172,7 @@
 		}
 
 		@include desktop {
-			padding: 0 0 0 64px;
+			padding: 0 0 0 87px;
 		}
 
 		&__link {
@@ -202,7 +201,6 @@
 
 	&-wordmark {
 		@extend .wordmark;
-		@extend .header-padding;
 
 		@include tablet {
 			position: absolute;

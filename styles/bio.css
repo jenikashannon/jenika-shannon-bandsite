@@ -53,17 +53,17 @@
     margin-bottom: 2.25rem;
   }
 }
-.header-padding, .footer-wordmark, .subheader, .bio__caption, .bio__subheader, .section-header, .bio__header,
-.photo-gallery__header, .footer-bar__header, .page-header, .hero__header {
+.header-padding, .subheader, .bio__caption, .bio__subheader, .navigation-copy, .nav-bar-list__link, .section-header, .bio__header,
+.photo-gallery__header, .footer-bar__header, .page-header, .hero__header, .wordmark, .footer-wordmark, .nav-bar__wordmark {
   padding-top: 24px;
   padding-bottom: 16px;
 }
 
-.component-padding, .footer-social, .body-copy, .bio__copy, .nav-bar-list__link, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header, .body-copy--bold {
+.component-padding, .footer-social, .body-copy, .bio__copy, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header, .body-copy--bold {
   padding-bottom: 16px;
 }
 
-.page-header, .hero__header {
+.page-header, .hero__header, .wordmark, .footer-wordmark, .nav-bar__wordmark {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -76,13 +76,17 @@
   font-weight: 700;
 }
 
-.subheader, .bio__caption, .bio__subheader {
+.subheader, .bio__caption, .bio__subheader, .navigation-copy, .nav-bar-list__link {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
 }
 
-.body-copy, .bio__copy, .nav-bar-list__link, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header, .body-copy--bold {
+.navigation-copy, .nav-bar-list__link {
+  padding: 0 0 8px;
+}
+
+.body-copy, .bio__copy, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header, .body-copy--bold {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
@@ -102,21 +106,22 @@
 }
 
 .wordmark, .footer-wordmark, .nav-bar__wordmark {
-  font-size: 1.25rem;
+  padding: 0;
   font-weight: 400;
   color: #ffffff;
+  margin: 36px 0;
 }
 
 @media (min-width: 768px) {
-  .header-padding, .footer-wordmark, .page-header, .hero__header, .section-header, .bio__header,
-  .photo-gallery__header, .footer-bar__header, .subheader, .bio__caption, .bio__subheader {
+  .header-padding, .page-header, .hero__header, .section-header, .bio__header,
+  .photo-gallery__header, .footer-bar__header, .subheader, .bio__caption, .bio__subheader, .navigation-copy, .nav-bar-list__link, .wordmark, .footer-wordmark, .nav-bar__wordmark {
     padding-top: 48px;
     padding-bottom: 36px;
   }
-  .component-padding, .footer-social, .body-copy, .bio__copy, .nav-bar-list__link, .body-copy--bold, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header {
+  .component-padding, .footer-social, .body-copy, .bio__copy, .body-copy--bold, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header {
     padding-bottom: 36px;
   }
-  .page-header, .hero__header {
+  .page-header, .hero__header, .wordmark, .footer-wordmark, .nav-bar__wordmark {
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: 700;
@@ -127,17 +132,35 @@
     line-height: 2.75rem;
     font-weight: 700;
   }
-  .subheader, .bio__caption, .bio__subheader {
+  .subheader, .bio__caption, .bio__subheader, .navigation-copy, .nav-bar-list__link {
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 600;
   }
-  .body-copy, .bio__copy, .nav-bar-list__link, .body-copy--bold, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header {
+  .body-copy, .bio__copy, .body-copy--bold, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header {
     font-size: 0.875rem;
     line-height: 1.375rem;
     font-weight: 400;
   }
   .body-copy--bold {
+    font-weight: 700;
+  }
+  .navigation-copy, .nav-bar-list__link {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    padding: 16px 0;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .navigation-copy, .nav-bar-list__link {
+    padding-bottom: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .navigation-copy--bold {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
     font-weight: 700;
   }
   .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header {
@@ -153,6 +176,11 @@
     line-height: 1.25rem;
     font-weight: 700;
   }
+  .wordmark, .footer-wordmark, .nav-bar__wordmark {
+    font-size: 1.25rem;
+    font-weight: 400;
+    padding: 0;
+  }
 }
 .nav-bar {
   display: flex;
@@ -163,10 +191,16 @@
 @media (min-width: 768px) {
   .nav-bar {
     flex-direction: row;
+    align-items: flex-end;
   }
 }
 .nav-bar__wordmark {
-  margin: 16px 48px 16px 36px;
+  margin: 16px;
+}
+@media (min-width: 768px) {
+  .nav-bar__wordmark {
+    margin-bottom: 0;
+  }
 }
 @media (min-width: 1280px) {
   .nav-bar__wordmark {
@@ -175,6 +209,7 @@
 }
 .nav-bar-list {
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-evenly;
 }
@@ -187,16 +222,20 @@
   width: 100%;
   text-align: center;
 }
-.nav-bar-list__item--active {
-  border-bottom: 3px #ffffff solid;
-  margin-right: 36px;
+@media (min-width: 768px) {
+  .nav-bar-list__item {
+    margin: 0 16px;
+  }
 }
 .nav-bar-list__link {
   color: #ffffff;
+  font-weight: 400;
+  display: block;
+  height: 100%;
 }
-
-.footer-bar {
-  background-color: #323232;
+.nav-bar-list__link--active {
+  border-bottom: 3px #ffffff solid;
+  font-weight: 700;
 }
 
 .hero__header,
@@ -311,6 +350,7 @@
 
 .footer-bar {
   position: relative;
+  background-color: #323232;
 }
 .footer-bar__header {
   padding-right: 24px;
@@ -339,7 +379,7 @@
 }
 @media (min-width: 1280px) {
   .footer-social {
-    padding: 0 0 0 64px;
+    padding: 0 0 0 87px;
   }
 }
 .footer-social__link {
