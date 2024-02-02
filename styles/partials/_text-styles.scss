@@ -1,7 +1,6 @@
 @use "./global" as *;
 @use "./variables" as *;
 @use "./mixins" as *;
-//go thru and delete lines in media query that are same as default
 
 .header-padding {
 	padding-top: 24px;
@@ -50,13 +49,18 @@
 	}
 }
 
-.footer-copy {
+.footer-copy,
+.footer-copyright {
 	@extend .body-copy;
 
 	&--bold {
 		@extend .footer-copy;
 		font-weight: 700;
 	}
+}
+
+.footer-copyright {
+	font-size: 0.7rem;
 }
 
 .labels-and-buttons {
@@ -86,22 +90,34 @@
 	.page-header {
 		font-size: 3.75rem;
 		line-height: 4.25rem;
-		font-weight: 700;
 		@extend .header-padding;
 	}
 
 	.section-header {
 		font-size: 2.25rem;
 		line-height: 2.75rem;
-		font-weight: 700;
 		@extend .header-padding;
 	}
 
 	.subheader {
 		font-size: 1.5rem;
 		line-height: 2rem;
-		font-weight: 600;
 		@extend .header-padding;
+	}
+
+	.navigation-copy {
+		font-size: 0.875rem;
+		line-height: 1.375rem;
+		font-weight: 400;
+		padding: 16px 0;
+
+		@include tablet {
+			padding-bottom: 20px;
+		}
+
+		&--bold {
+			font-weight: 700;
+		}
 	}
 
 	.body-copy {
@@ -116,24 +132,8 @@
 		}
 	}
 
-	.navigation-copy {
-		font-size: 0.875rem;
-		line-height: 1.375rem;
-		font-weight: 400;
-		padding: 16px 0;
-
-		@include tablet {
-			padding-bottom: 20px;
-		}
-
-		&--bold {
-			font-size: 0.875rem;
-			line-height: 1.375rem;
-			font-weight: 700;
-		}
-	}
-
-	.footer-copy {
+	.footer-copy,
+	.footer-copyright {
 		font-size: 0.875rem;
 		line-height: 1.25rem;
 		font-weight: 400;
@@ -147,13 +147,10 @@
 
 	.labels-and-buttons {
 		font-size: 0.75rem;
-		line-height: 1.25rem;
-		font-weight: 700;
 	}
 
 	.wordmark {
 		font-size: 1.25rem;
-		font-weight: 400;
 		padding: 0;
 	}
 }

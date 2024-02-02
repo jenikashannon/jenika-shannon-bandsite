@@ -1,7 +1,3 @@
-.check {
-  border: red 3px dashed;
-}
-
 @font-face {
   font-family: "Avenir";
   src: url(/assets/fonts/AvenirNextLTPro-Regular.otf) format(".otf");
@@ -53,13 +49,15 @@
     margin-bottom: 2.25rem;
   }
 }
-.header-padding, .subheader, .bio__caption, .bio__subheader, .navigation-copy, .nav-bar-list__link, .section-header, .bio__header,
+.header-padding, .subheader, .bio__subheader, .navigation-copy, .nav-bar-list__link, .section-header, .bio__header,
 .photo-gallery__header, .footer-bar__header, .page-header, .hero__header, .wordmark, .footer-wordmark, .nav-bar__wordmark {
   padding-top: 24px;
   padding-bottom: 16px;
 }
 
-.component-padding, .footer-social, .body-copy, .bio__copy, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header, .body-copy--bold {
+.component-padding, .footer-social, .body-copy, .bio__copy, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
+.footer-copyright--bold,
+.footer-copyright, .body-copy--bold, .bio__caption {
   padding-bottom: 16px;
 }
 
@@ -76,7 +74,7 @@
   font-weight: 700;
 }
 
-.subheader, .bio__caption, .bio__subheader, .navigation-copy, .nav-bar-list__link {
+.subheader, .bio__subheader, .navigation-copy, .nav-bar-list__link {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
@@ -86,17 +84,24 @@
   padding: 0 0 8px;
 }
 
-.body-copy, .bio__copy, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header, .body-copy--bold {
+.body-copy, .bio__copy, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
+.footer-copyright--bold,
+.footer-copyright, .body-copy--bold, .bio__caption {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
 }
-.body-copy--bold {
+.body-copy--bold, .bio__caption {
   font-weight: 700;
 }
 
-.footer-copy--bold, .footer-contact-info__header {
+.footer-copy--bold, .footer-contact-info__header,
+.footer-copyright--bold {
   font-weight: 700;
+}
+
+.footer-copyright {
+  font-size: 0.7rem;
 }
 
 .labels-and-buttons {
@@ -114,36 +119,27 @@
 
 @media (min-width: 768px) {
   .header-padding, .page-header, .hero__header, .section-header, .bio__header,
-  .photo-gallery__header, .footer-bar__header, .subheader, .bio__caption, .bio__subheader, .navigation-copy, .nav-bar-list__link, .wordmark, .footer-wordmark, .nav-bar__wordmark {
+  .photo-gallery__header, .footer-bar__header, .subheader, .bio__subheader, .navigation-copy, .nav-bar-list__link, .wordmark, .footer-wordmark, .nav-bar__wordmark {
     padding-top: 48px;
     padding-bottom: 36px;
   }
-  .component-padding, .footer-social, .body-copy, .bio__copy, .body-copy--bold, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header {
+  .component-padding, .footer-social, .body-copy, .bio__copy, .body-copy--bold, .bio__caption, .footer-copy, .footer-contact-info__copy,
+  .footer-copyright, .footer-copy--bold, .footer-contact-info__header,
+  .footer-copyright--bold {
     padding-bottom: 36px;
   }
   .page-header, .hero__header, .wordmark, .footer-wordmark, .nav-bar__wordmark {
     font-size: 3.75rem;
     line-height: 4.25rem;
-    font-weight: 700;
   }
   .section-header, .bio__header,
   .photo-gallery__header, .footer-bar__header {
     font-size: 2.25rem;
     line-height: 2.75rem;
-    font-weight: 700;
   }
-  .subheader, .bio__caption, .bio__subheader, .navigation-copy, .nav-bar-list__link {
+  .subheader, .bio__subheader, .navigation-copy, .nav-bar-list__link {
     font-size: 1.5rem;
     line-height: 2rem;
-    font-weight: 600;
-  }
-  .body-copy, .bio__copy, .body-copy--bold, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-    font-weight: 400;
-  }
-  .body-copy--bold {
-    font-weight: 700;
   }
   .navigation-copy, .nav-bar-list__link {
     font-size: 0.875rem;
@@ -159,26 +155,34 @@
 }
 @media (min-width: 768px) {
   .navigation-copy--bold {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
     font-weight: 700;
   }
-  .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header {
+  .body-copy, .bio__copy, .body-copy--bold, .bio__caption, .footer-copy, .footer-contact-info__copy,
+  .footer-copyright, .footer-copy--bold, .footer-contact-info__header,
+  .footer-copyright--bold {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+  }
+  .body-copy--bold, .bio__caption {
+    font-weight: 700;
+  }
+  .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
+  .footer-copyright--bold,
+  .footer-copyright {
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 400;
   }
-  .footer-copy--bold, .footer-contact-info__header {
+  .footer-copy--bold, .footer-contact-info__header,
+  .footer-copyright--bold {
     font-weight: 700;
   }
   .labels-and-buttons {
     font-size: 0.75rem;
-    line-height: 1.25rem;
-    font-weight: 700;
   }
   .wordmark, .footer-wordmark, .nav-bar__wordmark {
     font-size: 1.25rem;
-    font-weight: 400;
     padding: 0;
   }
 }
@@ -200,6 +204,7 @@
 @media (min-width: 768px) {
   .nav-bar__wordmark {
     margin-bottom: 0;
+    margin-left: 20px;
   }
 }
 @media (min-width: 1280px) {
@@ -233,17 +238,28 @@
   display: block;
   height: 100%;
 }
-.nav-bar-list__link--active {
+.nav-bar-list__link--active, .nav-bar-list__link:hover {
   border-bottom: 3px #ffffff solid;
   font-weight: 700;
+}
+.nav-bar-list__link:hover {
+  font-weight: 500;
 }
 
 .hero__header,
 .bio__header,
 .footer-bar__header,
 .footer-contact-info__header,
-.footer-contact-info__copy {
+.footer-contact-info__copy,
+.footer-copyright {
   color: #ffffff;
+}
+
+.bio__header,
+.bio__caption,
+.bio__subheader,
+.bio__copy {
+  color: #323232;
 }
 
 .hero {
@@ -284,8 +300,15 @@
   width: 100%;
 }
 .bio__caption {
-  font-size: 1.39rem;
+  font-size: 0.97rem;
+  line-height: 1.4rem;
   padding: 16px 0;
+}
+@media (min-width: 768px) {
+  .bio__caption {
+    font-size: 1.39rem;
+    line-height: 1.8rem;
+  }
 }
 @media (min-width: 1280px) {
   .bio__caption {
@@ -294,7 +317,7 @@
   }
 }
 .bio__caption--credit {
-  font-size: 1rem;
+  font-size: 0.97rem;
   font-weight: 500;
   padding: 0;
 }
@@ -314,13 +337,6 @@
   }
 }
 
-.bio__header,
-.bio__caption,
-.bio__subheader,
-.bio__copy {
-  color: #323232;
-}
-
 .photo-gallery {
   background-color: #fafafa;
 }
@@ -334,6 +350,12 @@
     justify-content: space-between;
     padding-bottom: 20px;
   }
+}
+.photo-gallery__image {
+  filter: grayscale(1);
+}
+.photo-gallery__image:hover {
+  filter: grayscale(0);
 }
 @media (min-width: 768px) {
   .photo-gallery__image {
@@ -395,6 +417,14 @@
   .footer-contact-info {
     width: 75%;
   }
+}
+@media (min-width: 768px) {
+  .footer-copyright {
+    padding-top: 8px;
+  }
+}
+.footer-wordmark {
+  margin-bottom: 16px;
 }
 @media (min-width: 768px) {
   .footer-wordmark {

@@ -8,8 +8,16 @@
 .bio__header,
 .footer-bar__header,
 .footer-contact-info__header,
-.footer-contact-info__copy {
+.footer-contact-info__copy,
+.footer-copyright {
 	color: $primary-light;
+}
+
+.bio__header,
+.bio__caption,
+.bio__subheader,
+.bio__copy {
+	color: $primary-dark;
 }
 
 .bio__header,
@@ -61,9 +69,15 @@
 	}
 
 	&__caption {
-		@extend .subheader;
-		font-size: 1.39rem;
+		@extend .body-copy--bold;
+		font-size: 0.97rem;
+		line-height: 1.4rem;
 		padding: 16px 0;
+
+		@include tablet {
+			font-size: 1.39rem;
+			line-height: 1.8rem;
+		}
 
 		@include desktop {
 			font-size: 1.5rem;
@@ -71,7 +85,7 @@
 		}
 
 		&--credit {
-			font-size: 1rem;
+			font-size: 0.97rem;
 			font-weight: 500;
 			padding: 0;
 		}
@@ -100,13 +114,6 @@
 	}
 }
 
-.bio__header,
-.bio__caption,
-.bio__subheader,
-.bio__copy {
-	color: $primary-dark;
-}
-
 .photo-gallery {
 	@extend .side-padding;
 	background-color: $secondary-light;
@@ -124,6 +131,11 @@
 
 	&__image {
 		@extend .vertical-margin;
+		filter: grayscale(1);
+
+		&:hover {
+			filter: grayscale(0);
+		}
 
 		@include tablet {
 			width: 30%;
@@ -199,8 +211,15 @@
 		}
 	}
 
+	&-copyright {
+		@include tablet {
+			padding-top: 8px;
+		}
+	}
+
 	&-wordmark {
 		@extend .wordmark;
+		margin-bottom: 16px;
 
 		@include tablet {
 			position: absolute;

@@ -20,6 +20,7 @@
 
 		@include tablet {
 			margin-bottom: 0;
+			margin-left: 20px;
 		}
 
 		@include desktop {
@@ -53,9 +54,14 @@
 			display: block;
 			height: 100%;
 
-			&--active {
+			&--active,
+			&:hover {
 				border-bottom: 3px $primary-light solid;
 				font-weight: 700;
+			}
+
+			&:hover {
+				font-weight: 500;
 			}
 		}
 	}
