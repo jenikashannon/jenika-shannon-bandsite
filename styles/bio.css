@@ -1,3 +1,7 @@
+.check {
+  border: 2px red dashed;
+}
+
 @font-face {
   font-family: "Avenir";
   src: url(/assets/fonts/AvenirNextLTPro-Regular.otf) format(".otf");
@@ -25,37 +29,38 @@
   font-family: "Avenir";
 }
 
-.side-padding, .hero__header, .bio, .photo-gallery, .footer-bar {
+.side-padding, .hero__header, .bio, .photo-gallery, .comments, .footer-bar {
   padding: 0 1rem;
 }
 
-.vertical-margin, .photo-gallery__image {
+.vertical-margin, .photo-gallery__image, .button, .comment-form__button {
   margin-bottom: 1rem;
 }
 
 @media (min-width: 768px) {
-  .side-padding, .hero__header, .bio, .photo-gallery, .footer-bar {
+  .side-padding, .hero__header, .bio, .photo-gallery, .comments, .footer-bar {
     padding: 0 2.25rem;
   }
-  .vertical-margin, .photo-gallery__image {
+  .vertical-margin, .photo-gallery__image, .button, .comment-form__button {
     margin-bottom: 2.25rem;
   }
 }
 @media (min-width: 1280px) {
-  .side-padding, .hero__header, .bio, .photo-gallery, .footer-bar {
+  .side-padding, .hero__header, .bio, .photo-gallery, .comments, .footer-bar {
     padding: 0 5rem;
   }
-  .vertical-margin, .photo-gallery__image {
+  .vertical-margin, .photo-gallery__image, .button, .comment-form__button {
     margin-bottom: 2.25rem;
   }
 }
-.header-padding, .subheader, .bio__subheader, .navigation-copy, .nav-bar-list__link, .section-header, .bio__header,
-.photo-gallery__header, .footer-bar__header, .page-header, .hero__header, .wordmark, .footer-wordmark, .nav-bar__wordmark {
+.header-padding, .subheader, .bio__subheader, .comment-card__name, .comment-card__timestamp, .navigation-copy, .nav-bar-list__link, .section-header, .bio__header,
+.photo-gallery__header,
+.comments__header, .footer-bar__header, .page-header, .hero__header, .wordmark, .footer-wordmark, .nav-bar__wordmark {
   padding-top: 24px;
   padding-bottom: 16px;
 }
 
-.component-padding, .footer-social, .body-copy, .bio__copy, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
+.component-padding, .footer-social, .body-copy, .bio__copy, .comment-card__content, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
 .footer-copyright--bold,
 .footer-copyright, .body-copy--bold, .bio__caption {
   padding-bottom: 16px;
@@ -68,13 +73,14 @@
 }
 
 .section-header, .bio__header,
-.photo-gallery__header, .footer-bar__header {
+.photo-gallery__header,
+.comments__header, .footer-bar__header {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
 }
 
-.subheader, .bio__subheader, .navigation-copy, .nav-bar-list__link {
+.subheader, .bio__subheader, .comment-card__name, .comment-card__timestamp, .navigation-copy, .nav-bar-list__link {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
@@ -84,7 +90,7 @@
   padding: 0 0 8px;
 }
 
-.body-copy, .bio__copy, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
+.body-copy, .bio__copy, .comment-card__content, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
 .footer-copyright--bold,
 .footer-copyright, .body-copy--bold, .bio__caption {
   font-size: 0.8125rem;
@@ -104,7 +110,7 @@
   font-size: 0.7rem;
 }
 
-.labels-and-buttons {
+.labels-and-buttons, .comment-form__label, .button, .comment-form__button {
   font-size: 0.625rem;
   line-height: 1.25rem;
   font-weight: 700;
@@ -119,11 +125,12 @@
 
 @media (min-width: 768px) {
   .header-padding, .page-header, .hero__header, .section-header, .bio__header,
-  .photo-gallery__header, .footer-bar__header, .subheader, .bio__subheader, .navigation-copy, .nav-bar-list__link, .wordmark, .footer-wordmark, .nav-bar__wordmark {
+  .photo-gallery__header,
+  .comments__header, .footer-bar__header, .subheader, .bio__subheader, .comment-card__name, .comment-card__timestamp, .navigation-copy, .nav-bar-list__link, .wordmark, .footer-wordmark, .nav-bar__wordmark {
     padding-top: 48px;
     padding-bottom: 36px;
   }
-  .component-padding, .footer-social, .body-copy, .bio__copy, .body-copy--bold, .bio__caption, .footer-copy, .footer-contact-info__copy,
+  .component-padding, .footer-social, .body-copy, .bio__copy, .comment-card__content, .body-copy--bold, .bio__caption, .footer-copy, .footer-contact-info__copy,
   .footer-copyright, .footer-copy--bold, .footer-contact-info__header,
   .footer-copyright--bold {
     padding-bottom: 36px;
@@ -133,11 +140,12 @@
     line-height: 4.25rem;
   }
   .section-header, .bio__header,
-  .photo-gallery__header, .footer-bar__header {
+  .photo-gallery__header,
+  .comments__header, .footer-bar__header {
     font-size: 2.25rem;
     line-height: 2.75rem;
   }
-  .subheader, .bio__subheader, .navigation-copy, .nav-bar-list__link {
+  .subheader, .bio__subheader, .comment-card__name, .comment-card__timestamp, .navigation-copy, .nav-bar-list__link {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -157,7 +165,7 @@
   .navigation-copy--bold {
     font-weight: 700;
   }
-  .body-copy, .bio__copy, .body-copy--bold, .bio__caption, .footer-copy, .footer-contact-info__copy,
+  .body-copy, .bio__copy, .comment-card__content, .body-copy--bold, .bio__caption, .footer-copy, .footer-contact-info__copy,
   .footer-copyright, .footer-copy--bold, .footer-contact-info__header,
   .footer-copyright--bold {
     font-size: 0.875rem;
@@ -178,7 +186,7 @@
   .footer-copyright--bold {
     font-weight: 700;
   }
-  .labels-and-buttons {
+  .labels-and-buttons, .comment-form__label, .button, .comment-form__button {
     font-size: 0.75rem;
   }
   .wordmark, .footer-wordmark, .nav-bar__wordmark {
@@ -186,6 +194,14 @@
     padding: 0;
   }
 }
+.button, .comment-form__button {
+  background-color: #323232;
+  color: #ffffff;
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
+}
+
 .nav-bar {
   display: flex;
   flex-direction: column;
@@ -255,10 +271,18 @@
   color: #ffffff;
 }
 
+.comment-form__field::-moz-placeholder, .comment-form__field--comment::-moz-placeholder {
+  color: #323232;
+}
+
 .bio__header,
 .bio__caption,
 .bio__subheader,
-.bio__copy {
+.bio__copy,
+.photo-gallery__header,
+.comments__header,
+.comment-form__field::placeholder,
+.comment-form__field--comment::placeholder {
   color: #323232;
 }
 
@@ -370,6 +394,90 @@
   }
 }
 
+.comments__divider {
+  height: 1px;
+  background-color: #e1e1e1;
+  margin-bottom: 16px;
+}
+
+.add-comment {
+  display: flex;
+}
+.add-comment__avatar, .comment-card__avatar {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  background-image: url("/assets/images/Mohan-muruge.jpg");
+  background-size: cover;
+  flex-shrink: 0;
+  margin: 26px 12px 0 0;
+}
+@media (min-width: 768px) {
+  .add-comment__avatar, .comment-card__avatar {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.comment-form__label {
+  color: #afafaf;
+  margin-bottom: 4px;
+}
+.comment-form__field, .comment-form__field--comment {
+  border-radius: 4px;
+  border: #e1e1e1 1px solid;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .comment-form__field, .comment-form__field--comment {
+    padding: 16px;
+  }
+}
+.comment-form__field--comment {
+  height: 96px;
+  position: relative;
+}
+.comment-form__field--comment::-moz-placeholder {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+.comment-form__field--comment::placeholder {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+.comment-card {
+  display: flex;
+}
+.comment-card__container {
+  width: 100%;
+}
+.comment-card__avatar {
+  margin-top: 0;
+}
+.comment-card__avatar--blank {
+  background-image: url("");
+  background-color: #e1e1e1;
+}
+.comment-card__metadata {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.comment-card__name, .comment-card__timestamp {
+  padding: 0;
+}
+.comment-card__timestamp {
+  font-weight: 400;
+  color: #afafaf;
+}
 .footer-bar {
   position: relative;
   background-color: #323232;

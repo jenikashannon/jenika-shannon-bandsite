@@ -1,6 +1,10 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 
+.check {
+	border: 2px red dashed;
+}
+
 // font
 @font-face {
 	font-family: "Avenir";

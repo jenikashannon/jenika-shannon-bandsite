@@ -16,12 +16,17 @@
 .bio__header,
 .bio__caption,
 .bio__subheader,
-.bio__copy {
+.bio__copy,
+.photo-gallery__header,
+.comments__header,
+.comment-form__field::placeholder,
+.comment-form__field--comment::placeholder {
 	color: $primary-dark;
 }
 
 .bio__header,
-.photo-gallery__header {
+.photo-gallery__header,
+.comments__header {
 	@extend .section-header;
 }
 
@@ -146,6 +151,103 @@
 			width: 32%;
 			margin-bottom: 24px;
 		}
+	}
+}
+
+.comments {
+	@extend .side-padding;
+
+	&__divider {
+		height: 1px;
+		background-color: $secondary-mid;
+		margin-bottom: 16px;
+	}
+}
+
+.add-comment {
+	display: flex;
+
+	&__avatar {
+		@include avatar("/assets/images/Mohan-muruge.jpg");
+		margin: 26px 12px 0 0;
+	}
+}
+
+.comment-form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	&__label {
+		@extend .labels-and-buttons;
+		color: $primary-mid;
+		margin-bottom: 4px;
+	}
+
+	&__field {
+		border-radius: 4px;
+		border: $secondary-mid 1px solid;
+		padding: 12px;
+		margin-bottom: 16px;
+
+		@include tablet {
+			padding: 16px;
+		}
+
+		&--comment {
+			@extend .comment-form__field;
+			height: 96px;
+			position: relative;
+
+			&::placeholder {
+				position: absolute;
+				top: 16px;
+				left: 16px;
+			}
+		}
+	}
+
+	&__button {
+		@extend .button;
+	}
+}
+
+.comment-card {
+	display: flex;
+
+	&__container {
+		width: 100%;
+	}
+
+	&__avatar {
+		@extend .add-comment__avatar;
+		margin-top: 0;
+
+		&--blank {
+			background-image: url("");
+			background-color: $secondary-mid;
+		}
+	}
+
+	&__metadata {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 4px;
+	}
+
+	&__name,
+	&__timestamp {
+		@extend .subheader;
+		padding: 0;
+	}
+
+	&__timestamp {
+		font-weight: 400;
+		color: $primary-mid;
+	}
+
+	&__content {
+		@extend .body-copy;
 	}
 }
 

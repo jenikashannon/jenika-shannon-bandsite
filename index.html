@@ -5,11 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>👉🏽 🐝 🦵🏻</title>
 		<link rel="stylesheet" href="/styles/bio.css" />
+		<script src="/scripts/index-page.js" defer></script>
 	</head>
 
 	<body>
 		<nav class="nav-bar">
-			<a class="nav-bar__wordmark" href="/index.html">BANDSITE</a>
+			<a class="nav-bar__logo" href="/index.html">
+				<img src="./assets/logos/Logo-bandsite.svg" alt="" />
+			</a>
 			<ul class="nav-bar-list">
 				<li class="nav-bar-list__item nav-bar-list__item">
 					<a class="nav-bar-list__link nav-bar-list__link--active" href=""
@@ -141,6 +144,40 @@
 			</div>
 		</section>
 
+		<section class="comments">
+			<h2 class="comments__header">Join the Conversation</h2>
+
+			<article class="add-comment">
+				<div class="add-comment__avatar"></div>
+
+				<form class="comment-form">
+					<label class="comment-form__label">NAME</label>
+
+					<input
+						class="comment-form__field"
+						type="text"
+						name="userName"
+						placeholder="Enter your name"
+					/>
+
+					<label class="comment-form__label">COMMENT</label>
+
+					<input
+						class="comment-form__field--comment"
+						type="text"
+						name="userComment"
+						placeholder="Add a new comment"
+					/>
+
+					<input class="comment-form__button" type="submit" value="COMMENT" />
+				</form>
+			</article>
+
+			<div class="comments__divider"></div>
+
+			<article class="comment-feed"></article>
+		</section>
+
 		<footer class="footer-bar">
 			<!-- section header -->
 			<div class="footer-header-container">
@@ -211,7 +248,7 @@
 				</div>
 			</div>
 
-			<h1 class="footer-wordmark">BANDSITE</h1>
+			<img src="./assets/logos/Logo-bandsite.svg" alt="" />
 
 			<p class="footer-copyright">
 				Copyright The Bees Knees © 2023 All Rights Reserved
