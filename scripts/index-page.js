@@ -4,7 +4,7 @@ let comments = [
 		userName: "Victor Pinto",
 		timeStamp: "11/02/2023",
 		content:
-			"This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+			"Thisisart.Thisisinexplicablemagicexpressedinthepurestway,everythingthatmakesupthismajesticworkdeservesreverence.Letusappreciatethisfor what it is and what it contains.",
 	},
 	{
 		userAvatar: "",
@@ -26,7 +26,6 @@ const loadComments = (event) => {
 	if (typeof event !== "undefined") {
 		event.preventDefault();
 
-		console.log(event);
 		let today = new Date().getTime();
 		let timeStamp = event.timeStamp;
 		let formattedTimeStamp = "";
@@ -93,8 +92,6 @@ const loadComments = (event) => {
 		commentCardContainer.append(commentCardMetadata, commentCardContent);
 		commentCardEl.append(avatarEl, commentCardContainer);
 		commentContainer.append(commentCardEl, commentDividerEl);
-
-		console.log(commentContainer);
 	});
 };
 

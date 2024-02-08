@@ -1,0 +1,52 @@
+@use "./partials/global" as *;
+@use "./partials/text-styles" as *;
+@use "./partials/nav-bar-styles" as *;
+@use "./partials/hero-styles" as *;
+@use "./partials/footer-bar-styles" as *;
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
+.shows {
+	background-color: $primary-light;
+
+	&__header {
+		@extend .section-header;
+		@extend .side-padding;
+		color: $primary-dark;
+	}
+
+	&__divider {
+		@include divider;
+	}
+}
+
+.show-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	@extend .side-padding;
+
+	&-date,
+	&-venue,
+	&-location {
+		display: flex;
+		flex-direction: column;
+
+		&__label {
+			@extend .labels-and-buttons;
+			color: $secondary-mid;
+		}
+
+		&__content {
+			@extend .body-copy;
+		}
+	}
+
+	&-date__content {
+		font-weight: 600;
+	}
+
+	&__button {
+		@extend .button;
+	}
+}

@@ -25,3 +25,9 @@
 		height: 48px;
 	}
 }
+
+@mixin divider {
+	height: 1px;
+	background-color: $secondary-mid;
+	margin-bottom: 16px;
+}

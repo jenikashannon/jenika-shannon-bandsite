@@ -1,4 +1,4 @@
-.check, .comment-card, .comment-card__container {
+.check {
   border: 2px red dashed;
 }
 
@@ -29,40 +29,38 @@
   font-family: "Avenir";
 }
 
-.side-padding, .bio, .photo-gallery, .comments, .footer-bar, .hero__container {
+.side-padding, .shows__header, .show-card, .footer-bar, .hero__container {
   padding: 0 1rem;
 }
 
-.vertical-margin, .photo-gallery__image, .button, .comment-form__button {
+.vertical-margin, .button, .show-card__button {
   margin-bottom: 1rem;
 }
 
 @media (min-width: 768px) {
-  .side-padding, .bio, .photo-gallery, .comments, .footer-bar, .hero__container {
+  .side-padding, .shows__header, .show-card, .footer-bar, .hero__container {
     padding: 0 2.25rem;
   }
-  .vertical-margin, .photo-gallery__image, .button, .comment-form__button {
+  .vertical-margin, .button, .show-card__button {
     margin-bottom: 2.25rem;
   }
 }
 @media (min-width: 1280px) {
-  .side-padding, .bio, .photo-gallery, .comments, .footer-bar, .hero__container {
+  .side-padding, .shows__header, .show-card, .footer-bar, .hero__container {
     padding: 0 5rem;
   }
-  .vertical-margin, .photo-gallery__image, .button, .comment-form__button {
+  .vertical-margin, .button, .show-card__button {
     margin-bottom: 2.25rem;
   }
 }
-.header-padding, .subheader, .bio__subheader, .comment-card__name, .comment-card__timestamp, .hero__subheader, .navigation-copy, .nav-bar-list__link, .section-header, .bio__header,
-.photo-gallery__header,
-.comments__header, .footer-bar__header, .page-header, .hero__header, .wordmark, .footer-wordmark, .nav-bar__wordmark {
+.header-padding, .subheader, .hero__subheader, .navigation-copy, .nav-bar-list__link, .section-header, .shows__header, .footer-bar__header, .page-header, .hero__header, .wordmark, .footer-wordmark, .nav-bar__wordmark {
   padding-top: 24px;
   padding-bottom: 16px;
 }
 
-.component-padding, .footer-social, .body-copy, .bio__copy, .comment-card__content, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
+.component-padding, .footer-social, .body-copy, .show-card-date__content, .show-card-venue__content, .show-card-location__content, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
 .footer-copyright--bold,
-.footer-copyright, .body-copy--bold, .bio__caption {
+.footer-copyright, .body-copy--bold {
   padding-bottom: 16px;
 }
 
@@ -72,15 +70,13 @@
   font-weight: 700;
 }
 
-.section-header, .bio__header,
-.photo-gallery__header,
-.comments__header, .footer-bar__header {
+.section-header, .shows__header, .footer-bar__header {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
 }
 
-.subheader, .bio__subheader, .comment-card__name, .comment-card__timestamp, .hero__subheader, .navigation-copy, .nav-bar-list__link {
+.subheader, .hero__subheader, .navigation-copy, .nav-bar-list__link {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
@@ -90,14 +86,14 @@
   padding: 0 0 8px;
 }
 
-.body-copy, .bio__copy, .comment-card__content, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
+.body-copy, .show-card-date__content, .show-card-venue__content, .show-card-location__content, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
 .footer-copyright--bold,
-.footer-copyright, .body-copy--bold, .bio__caption {
+.footer-copyright, .body-copy--bold {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
 }
-.body-copy--bold, .bio__caption {
+.body-copy--bold {
   font-weight: 700;
 }
 
@@ -110,7 +106,7 @@
   font-size: 0.7rem;
 }
 
-.labels-and-buttons, .comment-form__label, .button, .comment-form__button {
+.labels-and-buttons, .show-card-date__label, .show-card-venue__label, .show-card-location__label, .button, .show-card__button {
   font-size: 0.625rem;
   line-height: 1.25rem;
   font-weight: 700;
@@ -124,13 +120,11 @@
 }
 
 @media (min-width: 768px) {
-  .header-padding, .page-header, .hero__header, .section-header, .bio__header,
-  .photo-gallery__header,
-  .comments__header, .footer-bar__header, .subheader, .bio__subheader, .comment-card__name, .comment-card__timestamp, .hero__subheader, .navigation-copy, .nav-bar-list__link, .wordmark, .footer-wordmark, .nav-bar__wordmark {
+  .header-padding, .page-header, .hero__header, .section-header, .shows__header, .footer-bar__header, .subheader, .hero__subheader, .navigation-copy, .nav-bar-list__link, .wordmark, .footer-wordmark, .nav-bar__wordmark {
     padding-top: 48px;
     padding-bottom: 36px;
   }
-  .component-padding, .footer-social, .body-copy, .bio__copy, .comment-card__content, .body-copy--bold, .bio__caption, .footer-copy, .footer-contact-info__copy,
+  .component-padding, .footer-social, .body-copy, .show-card-date__content, .show-card-venue__content, .show-card-location__content, .body-copy--bold, .footer-copy, .footer-contact-info__copy,
   .footer-copyright, .footer-copy--bold, .footer-contact-info__header,
   .footer-copyright--bold {
     padding-bottom: 36px;
@@ -139,13 +133,11 @@
     font-size: 3.75rem;
     line-height: 4.25rem;
   }
-  .section-header, .bio__header,
-  .photo-gallery__header,
-  .comments__header, .footer-bar__header {
+  .section-header, .shows__header, .footer-bar__header {
     font-size: 2.25rem;
     line-height: 2.75rem;
   }
-  .subheader, .bio__subheader, .comment-card__name, .comment-card__timestamp, .hero__subheader, .navigation-copy, .nav-bar-list__link {
+  .subheader, .hero__subheader, .navigation-copy, .nav-bar-list__link {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -165,14 +157,14 @@
   .navigation-copy--bold {
     font-weight: 700;
   }
-  .body-copy, .bio__copy, .comment-card__content, .body-copy--bold, .bio__caption, .footer-copy, .footer-contact-info__copy,
+  .body-copy, .show-card-date__content, .show-card-venue__content, .show-card-location__content, .body-copy--bold, .footer-copy, .footer-contact-info__copy,
   .footer-copyright, .footer-copy--bold, .footer-contact-info__header,
   .footer-copyright--bold {
     font-size: 0.875rem;
     line-height: 1.375rem;
     font-weight: 400;
   }
-  .body-copy--bold, .bio__caption {
+  .body-copy--bold {
     font-weight: 700;
   }
   .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
@@ -186,7 +178,7 @@
   .footer-copyright--bold {
     font-weight: 700;
   }
-  .labels-and-buttons, .comment-form__label, .button, .comment-form__button {
+  .labels-and-buttons, .show-card-date__label, .show-card-venue__label, .show-card-location__label, .button, .show-card__button {
     font-size: 0.75rem;
   }
   .wordmark, .footer-wordmark, .nav-bar__wordmark {
@@ -194,7 +186,7 @@
     padding: 0;
   }
 }
-.button, .comment-form__button {
+.button, .show-card__button {
   background-color: #323232;
   color: #ffffff;
   height: 40px;
@@ -374,184 +366,30 @@
   }
 }
 
-.bio__header {
-  color: #ffffff;
-}
-
-.comment-form__field::-moz-placeholder, .comment-form__field--comment::-moz-placeholder {
-  color: #323232;
-}
-
-.bio__header,
-.bio__caption,
-.bio__subheader,
-.bio__copy,
-.photo-gallery__header,
-.comments__header,
-.comment-form__field::placeholder,
-.comment-form__field--comment::placeholder {
-  color: #323232;
-}
-
-.bio {
+.shows {
   background-color: #ffffff;
 }
-@media (min-width: 768px) {
-  .bio__container {
-    padding: 0 56px;
-  }
+.shows__header {
+  color: #323232;
 }
-@media (min-width: 1280px) {
-  .bio__container {
-    padding: 0 80px;
-  }
-}
-.bio__image {
-  width: 100%;
-}
-.bio__caption {
-  font-size: 0.97rem;
-  line-height: 1.4rem;
-  padding: 16px 0;
-}
-@media (min-width: 768px) {
-  .bio__caption {
-    font-size: 1.39rem;
-    line-height: 1.8rem;
-  }
-}
-@media (min-width: 1280px) {
-  .bio__caption {
-    font-size: 1.5rem;
-    width: 77%;
-  }
-}
-.bio__caption--credit {
-  font-size: 0.97rem;
-  font-weight: 500;
-  padding: 0;
-}
-@media (min-width: 768px) {
-  .bio__copy-container {
-    display: flex;
-  }
-}
-@media (min-width: 768px) {
-  .bio__copy {
-    padding-right: 24px;
-  }
-}
-@media (min-width: 1280px) {
-  .bio__copy {
-    padding-right: 80px;
-  }
-}
-
-.photo-gallery {
-  background-color: #fafafa;
-}
-.photo-gallery__container {
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 768px) {
-  .photo-gallery__container {
-    flex-flow: row wrap;
-    justify-content: space-between;
-    padding-bottom: 20px;
-  }
-}
-.photo-gallery__image {
-  filter: grayscale(1);
-}
-.photo-gallery__image:hover {
-  filter: grayscale(0);
-}
-@media (min-width: 768px) {
-  .photo-gallery__image {
-    width: 30%;
-    margin-bottom: 24px;
-  }
-}
-@media (min-width: 1280px) {
-  .photo-gallery__image {
-    width: 32%;
-    margin-bottom: 24px;
-  }
-}
-
-.comments__divider {
+.shows__divider {
   height: 1px;
   background-color: #e1e1e1;
   margin-bottom: 16px;
 }
 
-.add-comment {
-  display: flex;
-}
-.add-comment__avatar, .comment-card__avatar {
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  background-image: url("/assets/images/Mohan-muruge.jpg");
-  background-size: cover;
-  flex-shrink: 0;
-  margin: 26px 12px 0 0;
-}
-@media (min-width: 768px) {
-  .add-comment__avatar, .comment-card__avatar {
-    width: 48px;
-    height: 48px;
-  }
-}
-
-.comment-form {
+.show-card {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  justify-content: space-around;
 }
-.comment-form__label {
-  color: #afafaf;
-  margin-bottom: 4px;
-}
-.comment-form__field, .comment-form__field--comment {
-  border-radius: 4px;
-  border: #e1e1e1 1px solid;
-  padding: 12px;
-  margin-bottom: 16px;
-}
-@media (min-width: 768px) {
-  .comment-form__field, .comment-form__field--comment {
-    padding: 16px;
-  }
-}
-.comment-form__field--comment {
-  padding-bottom: 64px;
-  resize: none;
-}
-.comment-card {
+.show-card-date, .show-card-venue, .show-card-location {
   display: flex;
-  width: 100%;
+  flex-direction: column;
 }
-.comment-card__container {
-  flex: 1;
+.show-card-date__label, .show-card-venue__label, .show-card-location__label {
+  color: #e1e1e1;
 }
-.comment-card__avatar {
-  margin-top: 0;
-}
-.comment-card__avatar--blank {
-  background-image: url("");
-  background-color: #e1e1e1;
-}
-.comment-card__metadata {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 4px;
-}
-.comment-card__name, .comment-card__timestamp {
-  padding: 0;
-}
-.comment-card__timestamp {
-  font-weight: 400;
-  color: #afafaf;
-}/*# sourceMappingURL=bio.css.map */
+.show-card-date__content {
+  font-weight: 600;
+}/*# sourceMappingURL=shows.css.map */

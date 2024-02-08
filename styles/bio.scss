@@ -1,15 +1,12 @@
 @use "./partials/global" as *;
 @use "./partials/text-styles" as *;
 @use "./partials/nav-bar-styles" as *;
+@use "./partials/hero-styles" as *;
+@use "./partials/footer-bar-styles" as *;
 @use "./partials/mixins" as *;
 @use "./partials/variables" as *;
 
-.hero__header,
-.bio__header,
-.footer-bar__header,
-.footer-contact-info__header,
-.footer-contact-info__copy,
-.footer-copyright {
+.bio__header {
 	color: $primary-light;
 }
 
@@ -28,31 +25,6 @@
 .photo-gallery__header,
 .comments__header {
 	@extend .section-header;
-}
-
-.hero {
-	position: relative;
-	display: flex;
-	align-items: center;
-
-	&__image {
-		width: 100%;
-
-		&--overlay {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(50, 50, 50, 0.5);
-		}
-	}
-
-	&__header {
-		@extend .page-header, .side-padding;
-		position: absolute;
-		left: 0;
-	}
 }
 
 .bio {
@@ -158,9 +130,7 @@
 	@extend .side-padding;
 
 	&__divider {
-		height: 1px;
-		background-color: $secondary-mid;
-		margin-bottom: 16px;
+		@include divider;
 	}
 }
 
@@ -196,14 +166,8 @@
 
 		&--comment {
 			@extend .comment-form__field;
-			height: 96px;
-			position: relative;
-
-			&::placeholder {
-				position: absolute;
-				top: 16px;
-				left: 16px;
-			}
+			padding-bottom: 64px;
+			resize: none;
 		}
 	}
 
@@ -214,9 +178,12 @@
 
 .comment-card {
 	display: flex;
+	width: 100%;
+	@extend .check;
 
 	&__container {
-		width: 100%;
+		flex: 1;
+		@extend .check;
 	}
 
 	&__avatar {
@@ -248,89 +215,5 @@
 
 	&__content {
 		@extend .body-copy;
-	}
-}
-
-.footer {
-	&-bar {
-		@extend .side-padding;
-		position: relative;
-		background-color: $primary-dark;
-
-		&__header {
-			@extend .section-header;
-			padding-right: 24px;
-
-			@include tablet {
-				padding-bottom: 0;
-			}
-		}
-	}
-
-	&-header-container {
-		@include tablet {
-			display: flex;
-			align-items: flex-end;
-			margin-bottom: 2rem;
-		}
-	}
-
-	&-social {
-		display: flex;
-		justify-content: flex-start;
-		width: 30%;
-		@extend .component-padding;
-
-		@include tablet {
-			padding: 0 0 0 16px;
-		}
-
-		@include desktop {
-			padding: 0 0 0 87px;
-		}
-
-		&__link {
-			margin-right: 32px;
-		}
-	}
-
-	&-contact-info {
-		@include tablet {
-			display: flex;
-			justify-content: space-between;
-		}
-
-		@include desktop {
-			width: 75%;
-		}
-
-		&__header {
-			@extend .footer-copy--bold;
-		}
-
-		&__copy {
-			@extend .footer-copy;
-		}
-	}
-
-	&-copyright {
-		@include tablet {
-			padding-top: 8px;
-		}
-	}
-
-	&-wordmark {
-		@extend .wordmark;
-		margin-bottom: 16px;
-
-		@include tablet {
-			position: absolute;
-			top: 16px;
-			right: 36px;
-		}
-
-		@include desktop {
-			right: 80px;
-		}
 	}
 }

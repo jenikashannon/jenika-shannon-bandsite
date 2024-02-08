@@ -1,0 +1,95 @@
+@use "./global" as *;
+@use "./text-styles" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.footer-bar__header,
+.footer-contact-info__header,
+.footer-contact-info__copy,
+.footer-copyright {
+	color: $primary-light;
+}
+
+.footer {
+	&-bar {
+		@extend .side-padding;
+		position: relative;
+		background-color: $primary-dark;
+
+		&__header {
+			@extend .section-header;
+			padding-right: 24px;
+
+			@include tablet {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	&-header-container {
+		@include tablet {
+			display: flex;
+			align-items: flex-end;
+			margin-bottom: 2rem;
+		}
+	}
+
+	&-social {
+		display: flex;
+		justify-content: flex-start;
+		width: 30%;
+		@extend .component-padding;
+
+		@include tablet {
+			padding: 0 0 0 16px;
+		}
+
+		@include desktop {
+			padding: 0 0 0 87px;
+		}
+
+		&__link {
+			margin-right: 32px;
+		}
+	}
+
+	&-contact-info {
+		@include tablet {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		@include desktop {
+			width: 75%;
+		}
+
+		&__header {
+			@extend .footer-copy--bold;
+		}
+
+		&__copy {
+			@extend .footer-copy;
+		}
+	}
+
+	&-copyright {
+		@include tablet {
+			padding-top: 8px;
+		}
+	}
+
+	&-wordmark {
+		@extend .wordmark;
+		margin-bottom: 16px;
+
+		@include tablet {
+			position: absolute;
+			top: 16px;
+			right: 36px;
+		}
+
+		@include desktop {
+			right: 80px;
+		}
+	}
+}
