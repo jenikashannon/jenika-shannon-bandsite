@@ -15,17 +15,7 @@
 	}
 
 	&__wordmark {
-		@extend .wordmark;
-		margin: 16px;
-
-		@include tablet {
-			margin-bottom: 0;
-			margin-left: 20px;
-		}
-
-		@include desktop {
-			margin-left: 80px;
-		}
+		@include wordmark;
 	}
 
 	&-list {

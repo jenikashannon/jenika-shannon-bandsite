@@ -1,6 +1,7 @@
 @use "./global" as *;
 @use "./text-styles" as *;
 @use "./variables" as *;
+@use "./mixins" as *;
 
 .hero {
 	position: relative;
@@ -44,5 +45,9 @@
 		width: 100%;
 		height: 100px;
 		padding-bottom: 8px;
+
+		@include tablet {
+			width: 60%;
+		}
 	}
 }

@@ -45,10 +45,44 @@ const renderShows = () => {
 	showsHeaderEl.classList.add("shows__header");
 	showsHeaderEl.innerText = "Shows";
 
-	showsSectionEl.append(showsHeaderEl);
+	// make container for show listings
+	let showsContainerEl = document.createElement("div");
+	showsContainerEl.classList.add("shows__container");
+
+	showsSectionEl.append(showsHeaderEl, showsContainerEl);
 
 	// make show cards for each show in array
-	shows.forEach((show) => {
+	shows.forEach((show, index) => {
+		// add class to first show labels
+		if (index === 0) {
+			let showCardDateLabelEl = document.createElement("p");
+			showCardDateLabelEl.classList.add("show-card-date__label");
+			showCardDateLabelEl.innerText = "DATE";
+
+			let showCardVenueLabelEl = document.createElement("p");
+			showCardVenueLabelEl.classList.add("show-card-venue__label");
+			showCardVenueLabelEl.innerText = "VENUE";
+
+			let showCardLocationLabelEl = document.createElement("p");
+			showCardLocationLabelEl.classList.add("show-card-location__label");
+			showCardLocationLabelEl.innerText = "LOCATION";
+
+			showCardDateLabelEl.classList.add("show-card-date__label--first");
+			showCardVenueLabelEl.classList.add("show-card-venue__label--first");
+			showCardLocationLabelEl.classList.add("show-card-location__label--first");
+
+			let showCardLabelEl = document.createElement("div");
+			showCardLabelEl.classList.add("show-card__labels");
+
+			showCardLabelEl.append(
+				showCardDateLabelEl,
+				showCardVenueLabelEl,
+				showCardLocationLabelEl
+			);
+
+			showsContainerEl.append(showCardLabelEl);
+		}
+
 		// make card element
 		let showCardEl = document.createElement("div");
 		showCardEl.classList.add("show-card");
@@ -116,8 +150,27 @@ const renderShows = () => {
 		);
 
 		// append card to section
-		showsSectionEl.append(showCardEl, showsDividerEl);
+		showsContainerEl.append(showCardEl, showsDividerEl);
 	});
 };
 
 renderShows();
+// show card responsive styling
+const styleShowCardEls = (showCardEl) => {
+	// set all cards to default styling
+	showCardEls.forEach((showCardEl) => {
+		showCardEl.classList.remove("show-card--selected");
+	});
+
+	// add selected styling to clicked card
+	showCardEl.classList.add("show-card--selected");
+};
+
+// add click event listener to show cards to adjust styling on click
+const showCardEls = document.querySelectorAll(".show-card");
+
+showCardEls.forEach((showCardEl) => {
+	showCardEl.addEventListener("click", () => {
+		styleShowCardEls(showCardEl);
+	});
+});

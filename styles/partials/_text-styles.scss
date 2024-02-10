@@ -69,14 +69,6 @@
 	font-weight: 700;
 }
 
-.wordmark {
-	@extend .page-header;
-	padding: 0;
-	font-weight: 400;
-	color: $primary-light;
-	margin: 36px 0;
-}
-
 @include tablet {
 	.header-padding {
 		padding-top: 48px;
@@ -148,19 +140,4 @@
 	.labels-and-buttons {
 		font-size: 0.75rem;
 	}
-
-	.wordmark {
-		font-size: 1.25rem;
-		padding: 0;
-	}
-}
-
-.button {
-	@extend .vertical-margin;
-	@extend .labels-and-buttons;
-	background-color: $primary-dark;
-	color: $primary-light;
-	height: 40px;
-	width: 100%;
-	border-radius: 4px;
 }

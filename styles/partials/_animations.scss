@@ -1,0 +1,8 @@
+@keyframes filter-change {
+	from {
+		filter: grayscale(1);
+	}
+	to {
+		filter: grayscale(0);
+	}
+}

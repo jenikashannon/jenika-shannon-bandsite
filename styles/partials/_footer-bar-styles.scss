@@ -77,19 +77,4 @@
 			padding-top: 8px;
 		}
 	}
-
-	&-wordmark {
-		@extend .wordmark;
-		margin-bottom: 16px;
-
-		@include tablet {
-			position: absolute;
-			top: 16px;
-			right: 36px;
-		}
-
-		@include desktop {
-			right: 80px;
-		}
-	}
 }

@@ -9,10 +9,33 @@
 .shows {
 	background-color: $primary-light;
 
+	@include tablet {
+		padding: 0 1rem;
+	}
+
+	@include desktop {
+		padding: 3rem 5rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+	}
+
 	&__header {
-		@extend .section-header;
 		@extend .side-padding;
+		@extend .section-header;
 		color: $primary-dark;
+
+		@include tablet {
+			padding-left: 16px;
+		}
+
+		@include desktop {
+			padding: 0;
+		}
+	}
+
+	&__container {
+		flex-basis: 75%;
 	}
 
 	&__divider {
@@ -21,24 +44,64 @@
 }
 
 .show-card {
+	@extend .side-padding;
+	padding: 16px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	@extend .side-padding;
+	transition: background-color, 0.5s;
+
+	@include tablet {
+		padding: 16px;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+	}
+
+	&:hover {
+		background-color: $secondary-light;
+	}
+
+	&--selected {
+		background-color: $secondary-mid !important;
+	}
+
+	&__labels {
+		display: flex;
+		padding: 0 16px;
+	}
 
 	&-date,
 	&-venue,
 	&-location {
-		display: flex;
-		flex-direction: column;
+		@include tablet {
+			flex-basis: 25%;
+		}
 
 		&__label {
 			@extend .labels-and-buttons;
-			color: $secondary-mid;
+			color: $primary-mid;
+
+			@include tablet {
+				display: none;
+			}
+
+			&--first {
+				display: none;
+
+				@include tablet {
+					display: inline;
+					flex-basis: 25%;
+				}
+			}
 		}
 
 		&__content {
 			@extend .body-copy;
+
+			@include tablet {
+				padding: 0;
+			}
 		}
 	}
 
@@ -47,6 +110,10 @@
 	}
 
 	&__button {
-		@extend .button;
+		@include button;
+
+		@include tablet {
+			margin-bottom: 0;
+		}
 	}
 }

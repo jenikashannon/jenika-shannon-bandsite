@@ -29,5 +29,30 @@
 @mixin divider {
 	height: 1px;
 	background-color: $secondary-mid;
-	margin-bottom: 16px;
+}
+
+@mixin wordmark {
+	margin: 16px;
+
+	@include tablet {
+		margin-left: 24px;
+	}
+
+	@include desktop {
+		margin-left: 80px;
+	}
+}
+
+@mixin button {
+	@extend .vertical-margin;
+	@extend .labels-and-buttons;
+	background-color: $primary-dark;
+	color: $primary-light;
+	height: 40px;
+	width: 100%;
+	border-radius: 4px;
+
+	@include tablet {
+		width: 25%;
+	}
 }

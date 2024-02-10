@@ -5,6 +5,7 @@
 @use "./partials/footer-bar-styles" as *;
 @use "./partials/mixins" as *;
 @use "./partials/variables" as *;
+@use "./partials/animations" as *;
 
 .bio__header {
 	color: $primary-light;
@@ -111,6 +112,7 @@
 		filter: grayscale(1);
 
 		&:hover {
+			animation: filter-change 1.5s;
 			filter: grayscale(0);
 		}
 
@@ -132,10 +134,21 @@
 	&__divider {
 		@include divider;
 	}
+
+	&__feed {
+		@include tablet {
+			margin: 0 48px;
+		}
+
+		@include desktop {
+			margin: 0 260px;
+		}
+	}
 }
 
 .add-comment {
 	display: flex;
+	@extend .comments__feed;
 
 	&__avatar {
 		@include avatar("/assets/images/Mohan-muruge.jpg");
@@ -147,21 +160,34 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	align-items: flex-end;
 
 	&__label {
 		@extend .labels-and-buttons;
 		color: $primary-mid;
 		margin-bottom: 4px;
+		width: 100%;
 	}
 
 	&__field {
 		border-radius: 4px;
 		border: $secondary-mid 1px solid;
 		padding: 12px;
+		min-height: 36px;
 		margin-bottom: 16px;
+		width: 100%;
 
 		@include tablet {
 			padding: 16px;
+			min-height: 48px;
+		}
+
+		&:focus {
+			border-color: $primary-dark;
+		}
+
+		&--error {
+			border-color: $error-red;
 		}
 
 		&--comment {
@@ -172,18 +198,19 @@
 	}
 
 	&__button {
-		@extend .button;
+		@include button;
+		margin-bottom: 16px;
 	}
 }
 
 .comment-card {
 	display: flex;
 	width: 100%;
-	@extend .check;
+	// @extend .check;
 
 	&__container {
 		flex: 1;
-		@extend .check;
+		// @extend .check;
 	}
 
 	&__avatar {
