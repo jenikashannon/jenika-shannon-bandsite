@@ -38,7 +38,7 @@
 		}
 
 		@include desktop {
-			padding: 0 80px;
+			padding: 0 5rem;
 		}
 	}
 
@@ -50,7 +50,7 @@
 		@extend .body-copy--bold;
 		font-size: 0.97rem;
 		line-height: 1.4rem;
-		padding: 16px 0;
+		padding: 1rem 0;
 
 		@include tablet {
 			font-size: 1.39rem;
@@ -83,11 +83,11 @@
 		@extend .body-copy;
 
 		@include tablet {
-			padding-right: 24px;
+			padding-right: 1.5rem;
 		}
 
 		@include desktop {
-			padding-right: 80px;
+			padding-right: 5rem;
 		}
 	}
 }
@@ -103,7 +103,7 @@
 		@include tablet {
 			flex-flow: row wrap;
 			justify-content: space-between;
-			padding-bottom: 20px;
+			padding-bottom: 1.25rem;
 		}
 	}
 
@@ -172,13 +172,13 @@
 	&__field {
 		border-radius: 4px;
 		border: $secondary-mid 1px solid;
-		padding: 12px;
+		padding: 0.75rem;
 		min-height: 36px;
 		margin-bottom: 16px;
 		width: 100%;
 
 		@include tablet {
-			padding: 16px;
+			padding: 1rem;
 			min-height: 48px;
 		}
 
@@ -192,7 +192,7 @@
 
 		&--comment {
 			@extend .comment-form__field;
-			padding-bottom: 64px;
+			padding-bottom: 4rem;
 			resize: none;
 		}
 	}
@@ -205,12 +205,9 @@
 
 .comment-card {
 	display: flex;
-	width: 100%;
-	// @extend .check;
 
 	&__container {
 		flex: 1;
-		// @extend .check;
 	}
 
 	&__avatar {
@@ -231,7 +228,8 @@
 
 	&__name,
 	&__timestamp {
-		@extend .subheader;
+		@extend .body-copy;
+		font-weight: 600;
 		padding: 0;
 	}
 

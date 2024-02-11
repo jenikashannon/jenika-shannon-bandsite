@@ -155,7 +155,11 @@ const renderShows = () => {
 };
 
 renderShows();
-// show card responsive styling
+
+// select all show cards
+const showCardEls = document.querySelectorAll(".show-card");
+
+// show card styling on click
 const styleShowCardEls = (showCardEl) => {
 	// set all cards to default styling
 	showCardEls.forEach((showCardEl) => {
@@ -167,8 +171,6 @@ const styleShowCardEls = (showCardEl) => {
 };
 
 // add click event listener to show cards to adjust styling on click
-const showCardEls = document.querySelectorAll(".show-card");
-
 showCardEls.forEach((showCardEl) => {
 	showCardEl.addEventListener("click", () => {
 		styleShowCardEls(showCardEl);

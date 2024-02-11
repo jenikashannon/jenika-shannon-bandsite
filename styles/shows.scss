@@ -26,7 +26,7 @@
 		color: $primary-dark;
 
 		@include tablet {
-			padding-left: 16px;
+			padding-left: 1rem;
 		}
 
 		@include desktop {
@@ -36,23 +36,33 @@
 
 	&__container {
 		flex-basis: 75%;
+		margin-bottom: 16px;
+
+		@include desktop {
+			margin-bottom: 0;
+		}
 	}
 
 	&__divider {
 		@include divider;
+		margin-bottom: 0;
+
+		@include tablet {
+			margin-bottom: 0;
+		}
 	}
 }
 
 .show-card {
 	@extend .side-padding;
-	padding: 16px;
+	padding: 1rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	transition: background-color, 0.5s;
 
 	@include tablet {
-		padding: 16px;
+		padding: 1rem;
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-around;
@@ -68,7 +78,7 @@
 
 	&__labels {
 		display: flex;
-		padding: 0 16px;
+		padding: 0 1rem;
 	}
 
 	&-date,

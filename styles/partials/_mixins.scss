@@ -29,6 +29,11 @@
 @mixin divider {
 	height: 1px;
 	background-color: $secondary-mid;
+	margin-bottom: 16px;
+
+	@include tablet {
+		margin-bottom: 36px;
+	}
 }
 
 @mixin wordmark {

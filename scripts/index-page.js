@@ -2,9 +2,9 @@ let comments = [
 	{
 		userAvatar: "",
 		userName: "Victor Pinto",
-		timeStamp: new Date("02/01/2024").getTime(),
+		timeStamp: new Date("11/02/2023").getTime(),
 		content:
-			"Thisisart.Thisisinexplicablemagicexpressedinthepurestway,everythingthatmakesupthismajesticworkdeservesreverence.Letusappreciatethisfor what it is and what it contains.",
+			"This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
 	},
 	{
 		userAvatar: "",
@@ -16,7 +16,7 @@ let comments = [
 	{
 		userAvatar: "",
 		userName: "Isaac Tadesse",
-		timeStamp: new Date("03/2/2023").getTime(),
+		timeStamp: new Date("10/20/2023").getTime(),
 		content:
 			"I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
 	},
