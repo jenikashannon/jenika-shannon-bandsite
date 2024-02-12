@@ -1,42 +1,27 @@
-let comments = [
-	{
-		userAvatar: "",
-		userName: "Victor Pinto",
-		timeStamp: new Date("11/02/2023").getTime(),
-		content:
-			"This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-	},
-	{
-		userAvatar: "",
-		userName: "Christina Cabrera",
-		timeStamp: new Date("10/28/2023").getTime(),
-		content:
-			"I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-	},
-	{
-		userAvatar: "",
-		userName: "Isaac Tadesse",
-		timeStamp: new Date("10/20/2023").getTime(),
-		content:
-			"I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-	},
-];
+const mainApi = new BandSiteApi("3eefb917-a4a5-4146-bc27-db1debb2d374");
 
-const loadComments = (event) => {
+const loadComments = async (event) => {
 	if (typeof event !== "undefined") {
 		event.preventDefault();
 
-		// add new comment to start of comments array (to be displayed first)
-		comments.unshift({
-			userAvatar: "/assets/images/Mohan-muruge.jpg",
-			userName: event.target.userName.value,
-			timeStamp: new Date(),
-			content: event.target.userComment.value,
-		});
+		// create new comment object and POST
+		const newComment = {
+			name: event.target.userName.value,
+			comment: event.target.userComment.value,
+		};
+
+		await mainApi.postComment(newComment);
 
 		// clear input fields
 		event.target.reset();
 	}
+
+	// GET and sort comments
+	const comments = await mainApi.getComments();
+
+	comments.sort((a, b) => {
+		return b.timestamp - a.timestamp;
+	});
 
 	// clear comments
 	let commentContainer = document.querySelector(".comments__feed");
@@ -69,16 +54,16 @@ const loadComments = (event) => {
 		commentCardMetadata.classList.add("comment-card__metadata");
 
 		let commentCardName = document.createElement("h3");
-		commentCardName.innerText = comment.userName;
+		commentCardName.innerText = comment.name;
 		commentCardName.classList.add("comment-card__name");
 
 		let commentCardTimestamp = document.createElement("h4");
 		commentCardTimestamp.classList.add("comment-card__timestamp");
-		commentCardTimestamp.innerText = formatTimestamp(comment.timeStamp);
+		commentCardTimestamp.innerText = formatTimestamp(comment.timestamp);
 
 		// make & style comment text
 		let commentCardContent = document.createElement("p");
-		commentCardContent.innerText = comment.content;
+		commentCardContent.innerText = comment.comment;
 		commentCardContent.classList.add("comment-card__content");
 
 		// make & style divider
@@ -111,28 +96,28 @@ const formatTimestamp = (timeStamp) => {
 
 	const timePassedInHours = Math.round(timePassed / hour);
 	if (timePassedInHours <= 1) {
-		return "1 hour ago";
+		return "an hour ago";
 	} else if (timePassedInHours < 24) {
 		return timePassedInHours + " hours ago";
 	}
 
 	const timePassedInDays = Math.round(timePassed / day);
 	if (timePassedInDays <= 1) {
-		return "1 day ago";
+		return "a day ago";
 	} else if (timePassedInDays < 7) {
 		return timePassedInDays + " days ago";
 	}
 
 	const timePassedInWeeks = Math.round(timePassed / week);
 	if (timePassedInWeeks <= 1) {
-		return "1 week ago";
+		return "a week ago";
 	} else if (timePassedInWeeks < 4.345) {
 		return timePassedInWeeks + " weeks ago";
 	}
 
 	const timePassedInMonths = Math.round(timePassed / month);
 	if (timePassedInMonths <= 1) {
-		return "1 month ago";
+		return "a month ago";
 	} else if (timePassedInMonths < 12) {
 		return timePassedInMonths + " months ago";
 	}

@@ -1,43 +1,11 @@
-let shows = [
-	{
-		date: "Mon Sept 09 2024",
-		venue: "Ronald Lane",
-		location: "San Francisco, CA",
-	},
-	{
-		date: "Tue Sept 17 2024",
-		venue: "Pier 3 East",
-		location: "San Francisco, CA",
-	},
-	{
-		date: "Sat Oct 12 2024",
-		venue: "View Lounge",
-		location: "San Francisco, CA",
-	},
-	{
-		date: "Sat Nov 16 2024",
-		venue: "Hyatt Angency",
-		location: "San Francisco, CA",
-	},
-	{
-		date: "Mon Sept 09 2024",
-		venue: "Ronald Lane",
-		location: "San Francisco, CA",
-	},
-	{
-		date: "Fri Nov 29 2024",
-		venue: "Moscow Center",
-		location: "San Francisco, CA",
-	},
-	{
-		date: "Wed Dec 18 2024",
-		venue: "Press Club",
-		location: "San Francisco, CA",
-	},
-];
+const showsApi = new BandSiteApi("3eefb917-a4a5-4146-bc27-db1debb2d374");
+let showCardEls = [];
 
-const renderShows = () => {
-	// get shows section
+const renderShows = async () => {
+	// GET shows
+	const shows = await showsApi.getShows();
+
+	// select shows section
 	let showsSectionEl = document.querySelector(".shows");
 
 	// make shows header
@@ -97,7 +65,30 @@ const renderShows = () => {
 
 		let showCardDateContentEl = document.createElement("p");
 		showCardDateContentEl.classList.add("show-card-date__content");
-		showCardDateContentEl.innerText = show.date;
+
+		const dateString = new Date(show.date);
+		const days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+		const months = [
+			"Jan",
+			"Feb",
+			"Mar",
+			"Apr",
+			"May",
+			"June",
+			"July",
+			"Aug",
+			"Sept",
+			"Oct",
+			"Nov",
+			"Dec",
+		];
+
+		const day = days[dateString.getDay()];
+		const month = months[dateString.getMonth()];
+		const date = dateString.getDate();
+		const year = dateString.getFullYear();
+
+		showCardDateContentEl.innerText = `${day} ${month} ${date} ${year}`;
 
 		showCardDateEl.append(showCardDateLabelEl, showCardDateContentEl);
 
@@ -111,7 +102,7 @@ const renderShows = () => {
 
 		let showCardVenueContentEl = document.createElement("p");
 		showCardVenueContentEl.classList.add("show-card-venue__content");
-		showCardVenueContentEl.innerText = show.venue;
+		showCardVenueContentEl.innerText = show.place;
 
 		showCardVenueEl.append(showCardVenueLabelEl, showCardVenueContentEl);
 
@@ -152,14 +143,22 @@ const renderShows = () => {
 		// append card to section
 		showsContainerEl.append(showCardEl, showsDividerEl);
 	});
+
+	// select all show cards
+	showCardEls = document.querySelectorAll(".show-card");
+
+	// add click event listener to show cards to adjust styling on click
+	showCardEls.forEach((showCardEl) => {
+		console.log("here");
+		showCardEl.addEventListener("click", () => {
+			styleShowCardEls(showCardEl);
+		});
+	});
 };
 
 renderShows();
 
-// select all show cards
-const showCardEls = document.querySelectorAll(".show-card");
-
-// show card styling on click
+// click event handler to change show card styling
 const styleShowCardEls = (showCardEl) => {
 	// set all cards to default styling
 	showCardEls.forEach((showCardEl) => {
@@ -169,10 +168,3 @@ const styleShowCardEls = (showCardEl) => {
 	// add selected styling to clicked card
 	showCardEl.classList.add("show-card--selected");
 };
-
-// add click event listener to show cards to adjust styling on click
-showCardEls.forEach((showCardEl) => {
-	showCardEl.addEventListener("click", () => {
-		styleShowCardEls(showCardEl);
-	});
-});
