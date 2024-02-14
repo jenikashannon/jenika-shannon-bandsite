@@ -41,13 +41,9 @@ const loadComments = async (event) => {
 	// GET and sort comments
 	const comments = await mainApi.getComments();
 
-	comments.sort((a, b) => {
-		return b.timestamp - a.timestamp;
-	});
-
 	// clear comments
 	let commentContainer = document.querySelector(".comments__feed");
-	commentContainer.innerHTML = "";
+	commentContainer.innerText = "";
 
 	// make & style divider
 	let commentDividerEl = document.createElement("div");

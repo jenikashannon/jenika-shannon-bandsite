@@ -17,10 +17,17 @@ class BandSiteApi {
 
 	async getComments() {
 		try {
-			const result = await axios.get(
+			const response = await axios.get(
 				`${this.baseUrl}/comments?api_key=${this.apiKey}`
 			);
-			return result.data;
+
+			const comments = response.data;
+
+			comments.sort((a, b) => {
+				return b.timestamp - a.timestamp;
+			});
+
+			return comments;
 		} catch (error) {
 			console.log(error);
 		}
@@ -28,10 +35,10 @@ class BandSiteApi {
 
 	async getShows() {
 		try {
-			const result = await axios.get(
+			const response = await axios.get(
 				`${this.baseUrl}/showdates?api_key=${this.apiKey}`
 			);
-			return result.data;
+			return response.data;
 		} catch (error) {
 			console.log(error);
 		}

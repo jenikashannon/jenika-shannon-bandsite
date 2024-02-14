@@ -4,19 +4,19 @@
 
 @font-face {
   font-family: "Avenir";
-  src: url(/assets/fonts/AvenirNextLTPro-Regular.otf) format(".otf");
+  src: url(/assets/fonts/AvenirNextLTPro-Regular.otf) format(".otf"), url(/assets/fonts/Alternative/AvenirNextLTPro.ttf) format("ttf");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir";
-  src: url(/assets/fonts/AvenirNextLTPro-Demi.otf) format(".otf");
+  src: url(/assets/fonts/AvenirNextLTPro-Demi.otf) format(".otf"), url(/assets/fonts/Alternative/AvenirNextLTPro-Demi.ttf) format("ttf");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir";
-  src: url(/assets/fonts/AvenirNextLTPro-Bold.otf) format(".otf");
+  src: url(/assets/fonts/AvenirNextLTPro-Bold.otf) format(".otf"), url(/assets/fonts/Alternative/AvenirNextLTProBold.ttf) format("ttf");
   font-weight: 700;
   font-style: normal;
 }
@@ -539,9 +539,8 @@
   border-radius: 50%;
   width: 36px;
   height: 36px;
-  background-image: url("/assets/images/Mohan-muruge.jpg");
-  background-size: cover;
   flex-shrink: 0;
+  background-color: #e1e1e1;
   margin: 26px 12px 0 0;
 }
 @media (min-width: 768px) {
@@ -608,10 +607,6 @@
 }
 .comment-card__avatar {
   margin-top: 0;
-}
-.comment-card__avatar--blank {
-  background-image: url("");
-  background-color: #e1e1e1;
 }
 .comment-card__metadata {
   display: flex;

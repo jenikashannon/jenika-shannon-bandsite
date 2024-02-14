@@ -126,7 +126,7 @@ const renderShows = async () => {
 		// make button
 		let showCardButton = document.createElement("button");
 		showCardButton.classList.add("show-card__button");
-		showCardButton.innerHTML = "BUY TICKETS";
+		showCardButton.innerText = "BUY TICKETS";
 
 		// make divider
 		let showsDividerEl = document.createElement("div");

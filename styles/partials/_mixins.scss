@@ -12,13 +12,12 @@
 	}
 }
 
-@mixin avatar($src) {
+@mixin avatar() {
 	border-radius: 50%;
 	width: 36px;
 	height: 36px;
-	background-image: url($src);
-	background-size: cover;
 	flex-shrink: 0;
+	background-color: $secondary-mid;
 
 	@include tablet {
 		width: 48px;

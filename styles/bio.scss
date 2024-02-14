@@ -151,7 +151,7 @@
 	@extend .comments__feed;
 
 	&__avatar {
-		@include avatar("/assets/images/Mohan-muruge.jpg");
+		@include avatar;
 		margin: 26px 12px 0 0;
 	}
 }
@@ -212,11 +212,6 @@
 	&__avatar {
 		@extend .add-comment__avatar;
 		margin-top: 0;
-
-		&--blank {
-			background-image: url("");
-			background-color: $secondary-mid;
-		}
 	}
 
 	&__metadata {
