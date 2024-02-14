@@ -1,13 +1,35 @@
 const mainApi = new BandSiteApi("3eefb917-a4a5-4146-bc27-db1debb2d374");
 
 const loadComments = async (event) => {
-	if (typeof event !== "undefined") {
+	if (event) {
 		event.preventDefault();
+
+		const userName = event.target.userName.value;
+		const userComment = event.target.userComment.value;
+
+		// select form fields & remove error styling
+		const formFieldEls = document.querySelectorAll(".comment-form__field");
+
+		formFieldEls.forEach((formFieldEl) => {
+			formFieldEl.classList.remove("comment-form__field--error");
+		});
+
+		// add error styling to empty form fields
+		if (!(userName && userComment)) {
+			formFieldEls.forEach((formFieldEl) => {
+				if (!formFieldEl.value) {
+					formFieldEl.classList.add("comment-form__field--error");
+				}
+			});
+
+			// if empty response, do not continue
+			return;
+		}
 
 		// create new comment object and POST
 		const newComment = {
-			name: event.target.userName.value,
-			comment: event.target.userComment.value,
+			name: userName,
+			comment: userComment,
 		};
 
 		await mainApi.postComment(newComment);

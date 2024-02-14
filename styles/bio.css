@@ -562,7 +562,7 @@
   margin-bottom: 4px;
   width: 100%;
 }
-.comment-form__field, .comment-form__field--comment {
+.comment-form__field {
   border-radius: 4px;
   border: #e1e1e1 1px solid;
   padding: 0.75rem;
@@ -571,16 +571,16 @@
   width: 100%;
 }
 @media (min-width: 768px) {
-  .comment-form__field, .comment-form__field--comment {
+  .comment-form__field {
     padding: 1rem;
     min-height: 48px;
   }
 }
-.comment-form__field:focus, .comment-form__field--comment:focus {
+.comment-form__field:focus {
   border-color: #323232;
 }
 .comment-form__field--error {
-  border-color: #d22d2d;
+  border-color: #d22d2d !important;
 }
 .comment-form__field--comment {
   padding-bottom: 4rem;

@@ -187,11 +187,10 @@
 		}
 
 		&--error {
-			border-color: $error-red;
+			border-color: $error-red !important;
 		}
 
 		&--comment {
-			@extend .comment-form__field;
 			padding-bottom: 4rem;
 			resize: none;
 		}
