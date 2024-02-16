@@ -214,14 +214,17 @@
 		margin-top: 0;
 	}
 
-	&__metadata {
+	&__metadata,
+	&__button-container,
+	&__like-container {
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: 4px;
 	}
 
 	&__name,
-	&__timestamp {
+	&__timestamp,
+	&__like-count {
 		@extend .body-copy;
 		font-weight: 600;
 		padding: 0;
@@ -234,5 +237,10 @@
 
 	&__content {
 		@extend .body-copy;
+	}
+
+	&__button {
+		height: 16px;
+		margin-right: 4px;
 	}
 }

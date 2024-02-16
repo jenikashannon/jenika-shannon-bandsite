@@ -80,9 +80,39 @@ const loadComments = async (event) => {
 		commentCardTimestamp.innerText = formatTimestamp(comment.timestamp);
 
 		// make & style comment text
-		let commentCardContent = document.createElement("p");
+		let commentCardContent = document.createElement("h4");
 		commentCardContent.innerText = comment.comment;
 		commentCardContent.classList.add("comment-card__content");
+
+		let commentCardButtonContainer = document.createElement("div");
+		commentCardButtonContainer.classList.add("comment-card__button-container");
+
+		// make & style delete button, add event listener to delete comment on click
+		let commentCardDeleteButton = document.createElement("img");
+		commentCardDeleteButton.src = "/assets/icons/icon-delete.svg";
+		commentCardDeleteButton.classList.add("comment-card__button");
+
+		commentCardDeleteButton.addEventListener("click", async (event) => {
+			await mainApi.deleteComment(comment.id);
+			loadComments();
+		});
+
+		// make & style like button, add event listener to add like on click
+		let commentCardLikeContainer = document.createElement("div");
+		commentCardLikeContainer.classList.add("comment-card__like-container");
+
+		let commentCardLikeButton = document.createElement("img");
+		commentCardLikeButton.src = "/assets/icons/icon-like.svg";
+		commentCardLikeButton.classList.add("comment-card__button");
+
+		let commentCardLikeCount = document.createElement("p");
+		commentCardLikeCount.classList.add("comment-card__like-count");
+		commentCardLikeCount.innerText = comment.likes;
+
+		commentCardLikeButton.addEventListener("click", async (event) => {
+			await mainApi.likeComment(comment.id);
+			loadComments();
+		});
 
 		// make & style divider
 		let commentDividerEl = document.createElement("div");
@@ -90,7 +120,20 @@ const loadComments = async (event) => {
 
 		// add all of the elements to DOM
 		commentCardMetadata.append(commentCardName, commentCardTimestamp);
-		commentCardContainer.append(commentCardMetadata, commentCardContent);
+		commentCardLikeContainer.append(
+			commentCardLikeButton,
+			commentCardLikeCount
+		);
+
+		commentCardButtonContainer.append(
+			commentCardDeleteButton,
+			commentCardLikeContainer
+		);
+		commentCardContainer.append(
+			commentCardMetadata,
+			commentCardContent,
+			commentCardButtonContainer
+		);
 		commentCardEl.append(avatarEl, commentCardContainer);
 		commentContainer.append(commentCardEl, commentDividerEl);
 	});

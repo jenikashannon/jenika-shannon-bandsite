@@ -60,7 +60,7 @@
   padding-bottom: 16px;
 }
 
-.component-padding, .footer-social, .body-copy, .bio__copy, .comment-card__name, .comment-card__timestamp, .comment-card__content, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
+.component-padding, .footer-social, .body-copy, .bio__copy, .comment-card__name, .comment-card__timestamp, .comment-card__like-count, .comment-card__content, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
 .footer-copyright--bold,
 .footer-copyright, .body-copy--bold, .bio__caption {
   padding-bottom: 16px;
@@ -90,7 +90,7 @@
   padding: 0 0 8px;
 }
 
-.body-copy, .bio__copy, .comment-card__name, .comment-card__timestamp, .comment-card__content, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
+.body-copy, .bio__copy, .comment-card__name, .comment-card__timestamp, .comment-card__like-count, .comment-card__content, .footer-copy, .footer-contact-info__copy, .footer-copy--bold, .footer-contact-info__header,
 .footer-copyright--bold,
 .footer-copyright, .body-copy--bold, .bio__caption {
   font-size: 0.8125rem;
@@ -123,7 +123,7 @@
     padding-top: 48px;
     padding-bottom: 36px;
   }
-  .component-padding, .footer-social, .body-copy, .bio__copy, .comment-card__name, .comment-card__timestamp, .comment-card__content, .body-copy--bold, .bio__caption, .footer-copy, .footer-contact-info__copy,
+  .component-padding, .footer-social, .body-copy, .bio__copy, .comment-card__name, .comment-card__timestamp, .comment-card__like-count, .comment-card__content, .body-copy--bold, .bio__caption, .footer-copy, .footer-contact-info__copy,
   .footer-copyright, .footer-copy--bold, .footer-contact-info__header,
   .footer-copyright--bold {
     padding-bottom: 36px;
@@ -158,7 +158,7 @@
   .navigation-copy--bold {
     font-weight: 700;
   }
-  .body-copy, .bio__copy, .comment-card__name, .comment-card__timestamp, .comment-card__content, .body-copy--bold, .bio__caption, .footer-copy, .footer-contact-info__copy,
+  .body-copy, .bio__copy, .comment-card__name, .comment-card__timestamp, .comment-card__like-count, .comment-card__content, .body-copy--bold, .bio__caption, .footer-copy, .footer-contact-info__copy,
   .footer-copyright, .footer-copy--bold, .footer-contact-info__header,
   .footer-copyright--bold {
     font-size: 0.875rem;
@@ -608,16 +608,20 @@
 .comment-card__avatar {
   margin-top: 0;
 }
-.comment-card__metadata {
+.comment-card__metadata, .comment-card__button-container, .comment-card__like-container {
   display: flex;
   justify-content: space-between;
   margin-bottom: 4px;
 }
-.comment-card__name, .comment-card__timestamp {
+.comment-card__name, .comment-card__timestamp, .comment-card__like-count {
   font-weight: 600;
   padding: 0;
 }
 .comment-card__timestamp {
   font-weight: 400;
   color: #afafaf;
+}
+.comment-card__button {
+  height: 16px;
+  margin-right: 4px;
 }/*# sourceMappingURL=bio.css.map */
