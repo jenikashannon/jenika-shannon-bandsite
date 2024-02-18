@@ -97,19 +97,19 @@ const loadComments = async (event) => {
 			loadComments();
 		});
 
-		// make & style like button, add event listener to add like on click
+		// make & style like button, add event listener to increment like on click
 		let commentCardLikeContainer = document.createElement("div");
 		commentCardLikeContainer.classList.add("comment-card__like-container");
-
-		let commentCardLikeButton = document.createElement("img");
-		commentCardLikeButton.src = "/assets/icons/icon-like.svg";
-		commentCardLikeButton.classList.add("comment-card__button");
 
 		let commentCardLikeCount = document.createElement("p");
 		commentCardLikeCount.classList.add("comment-card__like-count");
 		commentCardLikeCount.innerText = comment.likes;
 
-		commentCardLikeButton.addEventListener("click", async (event) => {
+		let commentCardLikeButton = document.createElement("img");
+		commentCardLikeButton.src = "/assets/icons/icon-like.svg";
+		commentCardLikeButton.classList.add("comment-card__button");
+
+		commentCardLikeContainer.addEventListener("click", async (event) => {
 			await mainApi.likeComment(comment.id);
 			loadComments();
 		});
@@ -121,8 +121,8 @@ const loadComments = async (event) => {
 		// add all of the elements to DOM
 		commentCardMetadata.append(commentCardName, commentCardTimestamp);
 		commentCardLikeContainer.append(
-			commentCardLikeButton,
-			commentCardLikeCount
+			commentCardLikeCount,
+			commentCardLikeButton
 		);
 
 		commentCardButtonContainer.append(

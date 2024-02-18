@@ -204,6 +204,11 @@
 
 .comment-card {
 	display: flex;
+	margin-bottom: 16px;
+
+	@include tablet {
+		margin-bottom: 36px;
+	}
 
 	&__container {
 		flex: 1;
@@ -219,6 +224,10 @@
 	&__like-container {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__metadata {
 		margin-bottom: 4px;
 	}
 
@@ -230,6 +239,11 @@
 		padding: 0;
 	}
 
+	&__like-count {
+		margin-right: 4px;
+		font-size: 0.75rem;
+	}
+
 	&__timestamp {
 		font-weight: 400;
 		color: $primary-mid;
@@ -237,10 +251,10 @@
 
 	&__content {
 		@extend .body-copy;
+		padding-bottom: 8px;
 	}
 
 	&__button {
-		height: 16px;
-		margin-right: 4px;
+		height: 12px;
 	}
 }

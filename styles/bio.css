@@ -601,6 +601,12 @@
 
 .comment-card {
   display: flex;
+  margin-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .comment-card {
+    margin-bottom: 36px;
+  }
 }
 .comment-card__container {
   flex: 1;
@@ -611,17 +617,26 @@
 .comment-card__metadata, .comment-card__button-container, .comment-card__like-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.comment-card__metadata {
   margin-bottom: 4px;
 }
 .comment-card__name, .comment-card__timestamp, .comment-card__like-count {
   font-weight: 600;
   padding: 0;
 }
+.comment-card__like-count {
+  margin-right: 4px;
+  font-size: 0.75rem;
+}
 .comment-card__timestamp {
   font-weight: 400;
   color: #afafaf;
 }
+.comment-card__content {
+  padding-bottom: 8px;
+}
 .comment-card__button {
-  height: 16px;
-  margin-right: 4px;
+  height: 12px;
 }/*# sourceMappingURL=bio.css.map */
